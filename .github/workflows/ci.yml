@@ -63,6 +63,14 @@ jobs:
           name: app-debug-aab
           path: app/build/app/outputs/bundle/**/*.aab
           if-no-files-found: warn
+      - name: Build installable APK (sideload testing)
+        # Directly installable on a device — download from the run's Artifacts.
+        run: flutter build apk --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: warn
 
   backend:
     name: Backend build & test
