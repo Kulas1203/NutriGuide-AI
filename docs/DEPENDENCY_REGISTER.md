@@ -46,3 +46,6 @@ security concerns. Re-review before adding or upgrading.
 - `compileSdk`/`targetSdk` **36**, `minSdk` **24** (driven by
   `flutter_secure_storage`; covers the large majority of active devices),
   JDK 17, R8 minify + resource shrink for release.
+- **Core library desugaring** enabled (`desugar_jdk_libs:2.1.4`) because
+  `flutter_local_notifications` uses `java.time` APIs that need backporting
+  below API 26.
