@@ -1,0 +1,40 @@
+# Secrets & signing — NEVER commit
+**/key.properties
+*.jks
+*.keystore
+**/google-services.json
+**/serviceAccount*.json
+**/.env
+!**/.env.example
+
+# Flutter / Dart
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/build/
+app/.pub-cache/
+app/pubspec.lock
+**/*.g.dart.bak
+.flutter-versions
+
+# Android
+app/android/.gradle/
+app/android/local.properties
+app/android/app/debug/
+app/android/app/release/
+app/android/captures/
+app/**/GeneratedPluginRegistrant.*
+
+# Node / backend
+backend/functions/node_modules/
+backend/functions/lib/
+backend/functions/.env
+**/npm-debug.log*
+firebase-debug.log
+.firebase/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store

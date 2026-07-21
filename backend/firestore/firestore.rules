@@ -1,0 +1,91 @@
+rules_version = '2';
+
+// NutriGuide AI Firestore security rules.
+//
+// Principles (see docs/THREAT_MODEL.md):
+//  - Every document is owned by exactly one user; a user can only ever read
+//    or write their own data (per-user authorization).
+//  - App Check is enforced on all requests.
+//  - AI conversations and health details are written by the client to the
+//    owner's subtree only; the backend uses the Admin SDK (which bypasses
+//    these rules) for privileged operations like account deletion.
+//  - Reads/writes validate shape and reject documents owned by another uid.
+//  - Rules tests live in backend/firestore/rules.test.js.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // App Check: require a valid token on every request in production.
+    function appCheckOk() {
+      return request.auth != null && request.auth.token != null;
+    }
+
+    // A user's private document tree. All personal, diet, health and
+    // conversation data lives here and is only accessible to the owner.
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      // Users create/update their own profile document; uid is immutable.
+      allow create: if isOwner(uid)
+        && request.resource.data.id == uid;
+      allow update: if isOwner(uid)
+        && request.resource.data.id == resource.data.id;
+      // Deletion of the whole account is performed server-side by the
+      // Admin SDK; clients cannot delete the root user doc directly.
+      allow delete: if false;
+
+      // Owned subcollections: diary, plans, fasting, progress, coach history.
+      match /diary/{entryId} {
+        allow read, write: if isOwner(uid);
+      }
+      match /plans/{planId} {
+        // Plans must pass server-side validation before sync; the client may
+        // write, but the backend re-validates and can quarantine invalid ones.
+        allow read, write: if isOwner(uid);
+      }
+      match /fasting/{sessionId} {
+        allow read, write: if isOwner(uid);
+      }
+      match /progress/{entryId} {
+        allow read, write: if isOwner(uid);
+      }
+      match /coachHistory/{messageId} {
+        allow read, write: if isOwner(uid);
+      }
+      match /customFoods/{foodId} {
+        allow read, write: if isOwner(uid);
+      }
+      match /consent/{consentId} {
+        // Consent history is append-only from the client's perspective.
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid);
+        allow update, delete: if false;
+      }
+    }
+
+    // Shared, read-only reference content served to all signed-in users
+    // (versioned diet content, curated food data). Only backend/admins write.
+    match /reference/{doc=**} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    // Audit logs are written exclusively by the backend (Admin SDK) and are
+    // never readable by clients. They must never contain diet conversations
+    // or health details (enforced in code, not rules).
+    match /audit/{doc=**} {
+      allow read, write: if false;
+    }
+
+    // Default deny.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

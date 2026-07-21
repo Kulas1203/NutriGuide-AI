@@ -1,0 +1,1963 @@
+{
+ "version": "seed-v1",
+ "items": [
+  {
+   "id": "banana_peanut_oatmeal",
+   "name": "Banana peanut oatmeal",
+   "description": "Warm oats with banana slices and peanut butter, made with water or any plant milk.",
+   "cuisine": "General",
+   "slots": [
+    "breakfast"
+   ],
+   "servings": 1,
+   "prepMinutes": 10,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 426,
+    "proteinG": 13,
+    "carbsG": 62,
+    "fatG": 14,
+    "fiberG": 8.5,
+    "sodiumMg": 160
+   },
+   "ingredients": [
+    {
+     "name": "Rolled oats",
+     "grams": 50,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Banana",
+     "grams": 118,
+     "note": null,
+     "substitutes": [
+      "Apple",
+      "Mango"
+     ]
+    },
+    {
+     "name": "Peanut butter",
+     "grams": 16,
+     "note": null,
+     "substitutes": [
+      "Almond butter"
+     ]
+    },
+    {
+     "name": "Water or unsweetened soy milk",
+     "grams": 240,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Simmer oats in liquid for 4–5 minutes.",
+    "Top with sliced banana and peanut butter."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_fiber",
+    "whole_food",
+    "balanced",
+    "low_sodium",
+    "general"
+   ],
+   "allergens": [
+    "peanut",
+    "gluten"
+   ],
+   "assumptions": "Made with water or unsweetened soy milk; dairy milk adds ~90 kcal.",
+   "groceryCategory": {
+    "Rolled oats": "Grains & bread",
+    "Banana": "Produce",
+    "Peanut butter": "Pantry",
+    "Water or unsweetened soy milk": "Dairy & alternatives"
+   }
+  },
+  {
+   "id": "veggie_omelet",
+   "name": "Vegetable omelet with cheese",
+   "description": "Two-egg omelet with tomato, spinach and a little cheddar.",
+   "cuisine": "General",
+   "slots": [
+    "breakfast"
+   ],
+   "servings": 1,
+   "prepMinutes": 12,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 333,
+    "proteinG": 21,
+    "carbsG": 6,
+    "fatG": 25,
+    "fiberG": 1.8,
+    "sodiumMg": 480
+   },
+   "ingredients": [
+    {
+     "name": "Eggs",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Spinach",
+     "grams": 40,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Cheddar cheese",
+     "grams": 20,
+     "note": null,
+     "substitutes": [
+      "Feta"
+     ]
+    },
+    {
+     "name": "Olive oil",
+     "grams": 7,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sauté vegetables in oil.",
+    "Add beaten eggs, cook until just set, fold with cheese."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegetarian",
+    "keto",
+    "low_carb",
+    "high_protein",
+    "balanced",
+    "general"
+   ],
+   "allergens": [
+    "egg",
+    "milk"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Eggs": "Dairy & eggs",
+    "Spinach": "Produce",
+    "Tomato": "Produce",
+    "Cheddar cheese": "Dairy & eggs",
+    "Olive oil": "Pantry"
+   }
+  },
+  {
+   "id": "greek_yogurt_bowl",
+   "name": "Greek yogurt bowl with fruit and almonds",
+   "description": "High-protein yogurt with mango and crunchy almonds.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "breakfast",
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 5,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 332,
+    "proteinG": 24,
+    "carbsG": 32,
+    "fatG": 12,
+    "fiberG": 4.5,
+    "sodiumMg": 95
+   },
+   "ingredients": [
+    {
+     "name": "Greek yogurt, plain",
+     "grams": 200,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Mango",
+     "grams": 120,
+     "note": null,
+     "substitutes": [
+      "Banana",
+      "Papaya"
+     ]
+    },
+    {
+     "name": "Almonds",
+     "grams": 20,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Honey (optional)",
+     "grams": 7,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Layer yogurt, fruit and almonds in a bowl."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegetarian",
+    "high_protein",
+    "mediterranean",
+    "balanced",
+    "general"
+   ],
+   "allergens": [
+    "milk",
+    "tree nut"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Greek yogurt, plain": "Dairy & eggs",
+    "Mango": "Produce",
+    "Almonds": "Pantry",
+    "Honey (optional)": "Pantry"
+   }
+  },
+  {
+   "id": "tofu_scramble",
+   "name": "Tofu scramble with vegetables",
+   "description": "Savory crumbled tofu with tomato, onion and greens.",
+   "cuisine": "General",
+   "slots": [
+    "breakfast"
+   ],
+   "servings": 1,
+   "prepMinutes": 15,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 272,
+    "proteinG": 22,
+    "carbsG": 10,
+    "fatG": 16,
+    "fiberG": 3.5,
+    "sodiumMg": 380
+   },
+   "ingredients": [
+    {
+     "name": "Firm tofu",
+     "grams": 150,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Spinach or kangkong",
+     "grams": 50,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Turmeric and pepper",
+     "grams": 2,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Crumble tofu into a hot oiled pan.",
+    "Add vegetables and spices; cook 5 minutes."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_protein",
+    "low_carb",
+    "whole_food",
+    "general"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Firm tofu": "Chilled",
+    "Tomato": "Produce",
+    "Spinach or kangkong": "Produce",
+    "Olive oil": "Pantry",
+    "Turmeric and pepper": "Pantry"
+   }
+  },
+  {
+   "id": "tomato_olive_toast",
+   "name": "Tomato and olive oil toast",
+   "description": "Whole-grain toast rubbed with tomato, olive oil and oregano.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "breakfast",
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 8,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 337,
+    "proteinG": 9,
+    "carbsG": 46,
+    "fatG": 13,
+    "fiberG": 7,
+    "sodiumMg": 490
+   },
+   "ingredients": [
+    {
+     "name": "Whole-wheat bread",
+     "grams": 64,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Oregano",
+     "grams": 1,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Toast bread.",
+    "Top with grated tomato, oil and oregano."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "mediterranean",
+    "high_fiber",
+    "balanced",
+    "general"
+   ],
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Whole-wheat bread": "Grains & bread",
+    "Tomato": "Produce",
+    "Olive oil": "Pantry",
+    "Oregano": "Pantry"
+   }
+  },
+  {
+   "id": "sinangag_egg",
+   "name": "Garlic rice with fried egg",
+   "description": "Classic Filipino breakfast: sinangag topped with an egg and tomato.",
+   "cuisine": "Filipino",
+   "slots": [
+    "breakfast"
+   ],
+   "servings": 1,
+   "prepMinutes": 15,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 418,
+    "proteinG": 14,
+    "carbsG": 50,
+    "fatG": 18,
+    "fiberG": 1.8,
+    "sodiumMg": 520
+   },
+   "ingredients": [
+    {
+     "name": "Sinangag (garlic fried rice)",
+     "grams": 160,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Egg",
+     "grams": 50,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Oil for frying",
+     "grams": 5,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Fry day-old rice with garlic.",
+    "Top with a fried egg and sliced tomato."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegetarian",
+    "general",
+    "balanced"
+   ],
+   "allergens": [
+    "egg"
+   ],
+   "assumptions": "Estimated from home proportions; see the sinangag entry for rice assumptions.",
+   "groceryCategory": {
+    "Sinangag (garlic fried rice)": "Prepared",
+    "Egg": "Dairy & eggs",
+    "Tomato": "Produce",
+    "Oil for frying": "Pantry"
+   }
+  },
+  {
+   "id": "arroz_caldo_bowl",
+   "name": "Chicken arroz caldo",
+   "description": "Comforting ginger rice porridge with chicken and calamansi.",
+   "cuisine": "Filipino",
+   "slots": [
+    "breakfast",
+    "lunch"
+   ],
+   "servings": 4,
+   "prepMinutes": 40,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 304,
+    "proteinG": 17,
+    "carbsG": 41,
+    "fatG": 8,
+    "fiberG": 1,
+    "sodiumMg": 900
+   },
+   "ingredients": [
+    {
+     "name": "Rice",
+     "grams": 200,
+     "note": "raw",
+     "substitutes": []
+    },
+    {
+     "name": "Chicken thigh",
+     "grams": 400,
+     "note": null,
+     "substitutes": [
+      "Chicken breast"
+     ]
+    },
+    {
+     "name": "Ginger, garlic, onion",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Fish sauce",
+     "grams": 24,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Calamansi",
+     "grams": 20,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sauté aromatics, add rice and stock; simmer 25 minutes.",
+    "Add shredded chicken; season and serve with calamansi."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "general",
+    "balanced"
+   ],
+   "allergens": [],
+   "assumptions": "Sodium from ~1.5 tsp fish sauce per serving; reduce fish sauce to lower it.",
+   "groceryCategory": {
+    "Rice": "Grains & bread",
+    "Chicken thigh": "Meat & fish",
+    "Ginger, garlic, onion": "Produce",
+    "Fish sauce": "Pantry",
+    "Calamansi": "Produce"
+   }
+  },
+  {
+   "id": "chicken_tinola_meal",
+   "name": "Chicken tinola with rice",
+   "description": "Ginger chicken soup with sayote and malunggay over rice.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 45,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 390,
+    "proteinG": 28,
+    "carbsG": 47,
+    "fatG": 10,
+    "fiberG": 2.6,
+    "sodiumMg": 780
+   },
+   "ingredients": [
+    {
+     "name": "Chicken pieces",
+     "grams": 500,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Sayote or green papaya",
+     "grams": 300,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Malunggay leaves",
+     "grams": 40,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Ginger, garlic, onion",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Fish sauce",
+     "grams": 20,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 632,
+     "note": "158 g per serving",
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sauté aromatics, brown chicken lightly.",
+    "Add water, simmer 25 minutes; add sayote then malunggay.",
+    "Serve each bowl with 1 cup rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "general",
+    "balanced",
+    "whole_food"
+   ],
+   "allergens": [],
+   "assumptions": "Nutrition per serving includes 1 cup white rice.",
+   "groceryCategory": {
+    "Chicken pieces": "Meat & fish",
+    "Sayote or green papaya": "Produce",
+    "Malunggay leaves": "Produce",
+    "Ginger, garlic, onion": "Produce",
+    "Fish sauce": "Pantry",
+    "Rice, cooked": "Grains & bread"
+   }
+  },
+  {
+   "id": "chicken_adobo_meal",
+   "name": "Chicken adobo with rice and greens",
+   "description": "Braised soy-vinegar chicken with steamed rice and sautéed kangkong.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 50,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 489,
+    "proteinG": 35,
+    "carbsG": 49,
+    "fatG": 17,
+    "fiberG": 2.4,
+    "sodiumMg": 950
+   },
+   "ingredients": [
+    {
+     "name": "Chicken adobo",
+     "grams": 225,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 158,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Kangkong, sautéed",
+     "grams": 80,
+     "note": null,
+     "substitutes": [
+      "Spinach"
+     ]
+    }
+   ],
+   "steps": [
+    "Braise chicken in soy-vinegar sauce 35 minutes.",
+    "Serve with rice and quickly sautéed greens."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "general",
+    "balanced",
+    "high_protein"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Sodium mostly from soy sauce; use low-sodium soy sauce to reduce it.",
+   "groceryCategory": {
+    "Chicken adobo": "Prepared",
+    "Rice, cooked": "Grains & bread",
+    "Kangkong, sautéed": "Produce"
+   }
+  },
+  {
+   "id": "pork_sinigang_meal",
+   "name": "Pork sinigang with rice",
+   "description": "Sour tamarind soup loaded with vegetables, with a cup of rice.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 55,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 408,
+    "proteinG": 24,
+    "carbsG": 51,
+    "fatG": 12,
+    "fiberG": 4.2,
+    "sodiumMg": 880
+   },
+   "ingredients": [
+    {
+     "name": "Pork sinigang",
+     "grams": 350,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 158,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Simmer pork until tender; add tamarind base and vegetables.",
+    "Serve hot with rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "general",
+    "balanced",
+    "whole_food"
+   ],
+   "allergens": [],
+   "assumptions": "Per-serving values include broth and 1 cup rice.",
+   "groceryCategory": {
+    "Pork sinigang": "Prepared",
+    "Rice, cooked": "Grains & bread"
+   }
+  },
+  {
+   "id": "ginisang_monggo_meal",
+   "name": "Monggo stew with brown rice",
+   "description": "Hearty mung bean stew with malunggay over brown rice.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 45,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 388,
+    "proteinG": 17,
+    "carbsG": 62,
+    "fatG": 8,
+    "fiberG": 10.4,
+    "sodiumMg": 620
+   },
+   "ingredients": [
+    {
+     "name": "Ginisang monggo",
+     "grams": 240,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Brown rice, cooked",
+     "grams": 195,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Simmer mung beans until soft; sauté aromatics and combine.",
+    "Serve over brown rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_fiber",
+    "whole_food",
+    "balanced",
+    "general"
+   ],
+   "allergens": [],
+   "assumptions": "Plant version without pork or shrimp; add them separately if desired.",
+   "groceryCategory": {
+    "Ginisang monggo": "Prepared",
+    "Brown rice, cooked": "Grains & bread"
+   }
+  },
+  {
+   "id": "pinakbet_rice_meal",
+   "name": "Pinakbet with brown rice",
+   "description": "Sautéed native vegetables with miso, over brown rice.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 2,
+   "prepMinutes": 30,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 328,
+    "proteinG": 9,
+    "carbsG": 55,
+    "fatG": 8,
+    "fiberG": 8.2,
+    "sodiumMg": 720
+   },
+   "ingredients": [
+    {
+     "name": "Pinakbet (vegetable version)",
+     "grams": 200,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Brown rice, cooked",
+     "grams": 195,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sauté vegetables with tomato and miso.",
+    "Serve with brown rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_fiber",
+    "whole_food",
+    "general"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Traditional bagoong versions are higher in sodium and not vegetarian.",
+   "groceryCategory": {
+    "Pinakbet (vegetable version)": "Prepared",
+    "Brown rice, cooked": "Grains & bread"
+   }
+  },
+  {
+   "id": "grilled_bangus_meal",
+   "name": "Inihaw na bangus with rice and eggplant salad",
+   "description": "Grilled milkfish with rice and ensaladang talong.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 2,
+   "prepMinutes": 35,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 420,
+    "proteinG": 32,
+    "carbsG": 46,
+    "fatG": 12,
+    "fiberG": 3.4,
+    "sodiumMg": 640
+   },
+   "ingredients": [
+    {
+     "name": "Milkfish (bangus)",
+     "grams": 150,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 158,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Eggplant",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato and onion",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Vinegar dressing",
+     "grams": 15,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Grill bangus until cooked through.",
+    "Grill eggplant; toss with tomato, onion and vinegar.",
+    "Serve with rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "pescatarian",
+    "balanced",
+    "whole_food",
+    "dash",
+    "general"
+   ],
+   "allergens": [
+    "fish"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Milkfish (bangus)": "Meat & fish",
+    "Rice, cooked": "Grains & bread",
+    "Eggplant": "Produce",
+    "Tomato and onion": "Produce",
+    "Vinegar dressing": "Pantry"
+   }
+  },
+  {
+   "id": "baked_tilapia_plate",
+   "name": "Baked tilapia with vegetables",
+   "description": "Herb-baked tilapia with broccoli and roasted squash — naturally low in sodium.",
+   "cuisine": "General",
+   "slots": [
+    "dinner"
+   ],
+   "servings": 2,
+   "prepMinutes": 30,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 257,
+    "proteinG": 30,
+    "carbsG": 14,
+    "fatG": 9,
+    "fiberG": 5.4,
+    "sodiumMg": 220
+   },
+   "ingredients": [
+    {
+     "name": "Tilapia fillet",
+     "grams": 110,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Broccoli",
+     "grams": 156,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Squash (kalabasa)",
+     "grams": 150,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 7,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Lemon and herbs",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Season fish with herbs and lemon; bake 15 minutes.",
+    "Roast vegetables tossed in oil alongside."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "pescatarian",
+    "low_carb",
+    "keto",
+    "dash",
+    "low_sodium",
+    "high_protein",
+    "whole_food"
+   ],
+   "allergens": [
+    "fish"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Tilapia fillet": "Meat & fish",
+    "Broccoli": "Produce",
+    "Squash (kalabasa)": "Produce",
+    "Olive oil": "Pantry",
+    "Lemon and herbs": "Produce"
+   }
+  },
+  {
+   "id": "med_lentil_soup",
+   "name": "Mediterranean lentil soup",
+   "description": "Lentils simmered with tomato, carrot and olive oil; finished with lemon.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 40,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 309,
+    "proteinG": 15,
+    "carbsG": 42,
+    "fatG": 9,
+    "fiberG": 9.6,
+    "sodiumMg": 380
+   },
+   "ingredients": [
+    {
+     "name": "Lentils, dry",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 120,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Carrot",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Onion and garlic",
+     "grams": 50,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Lemon",
+     "grams": 15,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sauté vegetables in oil; add lentils and water.",
+    "Simmer 30 minutes; season and finish with lemon."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "mediterranean",
+    "high_fiber",
+    "dash",
+    "low_sodium",
+    "balanced",
+    "general"
+   ],
+   "allergens": [],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Lentils, dry": "Pantry",
+    "Tomato": "Produce",
+    "Carrot": "Produce",
+    "Onion and garlic": "Produce",
+    "Olive oil": "Pantry",
+    "Lemon": "Produce"
+   }
+  },
+  {
+   "id": "chickpea_salad_bowl",
+   "name": "Chickpea and vegetable salad",
+   "description": "Chickpeas, tomato, cabbage and olive-oil lemon dressing.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "lunch"
+   ],
+   "servings": 1,
+   "prepMinutes": 15,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 363,
+    "proteinG": 13,
+    "carbsG": 44,
+    "fatG": 15,
+    "fiberG": 11,
+    "sodiumMg": 340
+   },
+   "ingredients": [
+    {
+     "name": "Chickpeas, cooked",
+     "grams": 164,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Cabbage",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 12,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Lemon juice",
+     "grams": 15,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Toss everything with the dressing.",
+    "Rest 5 minutes before serving."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "mediterranean",
+    "high_fiber",
+    "dash",
+    "low_sodium",
+    "whole_food",
+    "general"
+   ],
+   "allergens": [],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Chickpeas, cooked": "Pantry",
+    "Tomato": "Produce",
+    "Cabbage": "Produce",
+    "Olive oil": "Pantry",
+    "Lemon juice": "Produce"
+   }
+  },
+  {
+   "id": "grilled_chicken_salad",
+   "name": "Grilled chicken salad",
+   "description": "Chicken breast over greens with olive-oil dressing.",
+   "cuisine": "General",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 1,
+   "prepMinutes": 20,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 369,
+    "proteinG": 36,
+    "carbsG": 9,
+    "fatG": 21,
+    "fiberG": 3.2,
+    "sodiumMg": 320
+   },
+   "ingredients": [
+    {
+     "name": "Chicken breast",
+     "grams": 120,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Lettuce and spinach",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 14,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Vinegar",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Grill seasoned chicken; slice.",
+    "Toss greens with dressing; top with chicken."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "high_protein",
+    "low_carb",
+    "keto",
+    "balanced",
+    "whole_food",
+    "general"
+   ],
+   "allergens": [],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Chicken breast": "Meat & fish",
+    "Lettuce and spinach": "Produce",
+    "Tomato": "Produce",
+    "Olive oil": "Pantry",
+    "Vinegar": "Pantry"
+   }
+  },
+  {
+   "id": "salmon_quinoa_plate",
+   "name": "Baked salmon with quinoa and greens",
+   "description": "Omega-3 rich salmon with fluffy quinoa and sautéed spinach.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "dinner"
+   ],
+   "servings": 1,
+   "prepMinutes": 30,
+   "costTier": 3,
+   "perServing": {
+    "kcal": 434,
+    "proteinG": 34,
+    "carbsG": 25,
+    "fatG": 22,
+    "fiberG": 4.6,
+    "sodiumMg": 300
+   },
+   "ingredients": [
+    {
+     "name": "Salmon fillet",
+     "grams": 125,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Quinoa, cooked",
+     "grams": 185,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Spinach",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 7,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Lemon",
+     "grams": 15,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Bake salmon 12–14 minutes.",
+    "Serve over quinoa with sautéed spinach."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "pescatarian",
+    "mediterranean",
+    "high_protein",
+    "dash",
+    "balanced",
+    "general"
+   ],
+   "allergens": [
+    "fish"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Salmon fillet": "Meat & fish",
+    "Quinoa, cooked": "Grains & bread",
+    "Spinach": "Produce",
+    "Olive oil": "Pantry",
+    "Lemon": "Produce"
+   }
+  },
+  {
+   "id": "beef_stirfry_rice",
+   "name": "Lean beef stir-fry with rice",
+   "description": "Beef strips with broccoli and carrots over steamed rice.",
+   "cuisine": "Asian",
+   "slots": [
+    "dinner"
+   ],
+   "servings": 2,
+   "prepMinutes": 25,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 463,
+    "proteinG": 31,
+    "carbsG": 51,
+    "fatG": 15,
+    "fiberG": 3.8,
+    "sodiumMg": 750
+   },
+   "ingredients": [
+    {
+     "name": "Ground or sliced beef, lean",
+     "grams": 120,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Broccoli",
+     "grams": 120,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Carrot",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 158,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Soy sauce",
+     "grams": 12,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Oil",
+     "grams": 7,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Sear beef; remove.",
+    "Stir-fry vegetables, return beef with sauce; serve over rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "high_protein",
+    "balanced",
+    "general"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Ground or sliced beef, lean": "Meat & fish",
+    "Broccoli": "Produce",
+    "Carrot": "Produce",
+    "Rice, cooked": "Grains & bread",
+    "Soy sauce": "Pantry",
+    "Oil": "Pantry"
+   }
+  },
+  {
+   "id": "tofu_veggie_stirfry",
+   "name": "Tofu vegetable stir-fry with rice",
+   "description": "Crispy tofu with cabbage, carrots and green beans over rice.",
+   "cuisine": "Asian",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 2,
+   "prepMinutes": 25,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 414,
+    "proteinG": 20,
+    "carbsG": 52,
+    "fatG": 14,
+    "fiberG": 5.6,
+    "sodiumMg": 620
+   },
+   "ingredients": [
+    {
+     "name": "Firm tofu",
+     "grams": 150,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Cabbage",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Carrot",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Green beans",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Rice, cooked",
+     "grams": 158,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Soy sauce",
+     "grams": 10,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Oil",
+     "grams": 8,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Pan-fry tofu cubes until golden.",
+    "Stir-fry vegetables; combine with sauce and serve over rice."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "balanced",
+    "high_fiber",
+    "general"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Firm tofu": "Chilled",
+    "Cabbage": "Produce",
+    "Carrot": "Produce",
+    "Green beans": "Produce",
+    "Rice, cooked": "Grains & bread",
+    "Soy sauce": "Pantry",
+    "Oil": "Pantry"
+   }
+  },
+  {
+   "id": "keto_chicken_plate",
+   "name": "Chicken thigh with buttered broccoli",
+   "description": "Roasted chicken thigh with broccoli in butter and cauliflower rice.",
+   "cuisine": "General",
+   "slots": [
+    "dinner"
+   ],
+   "servings": 1,
+   "prepMinutes": 30,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 486,
+    "proteinG": 35,
+    "carbsG": 10,
+    "fatG": 34,
+    "fiberG": 5.2,
+    "sodiumMg": 420
+   },
+   "ingredients": [
+    {
+     "name": "Chicken thigh",
+     "grams": 135,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Broccoli",
+     "grams": 156,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Cauliflower rice",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Butter",
+     "grams": 14,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Roast chicken thigh until crisp.",
+    "Steam broccoli and cauliflower rice; toss with butter."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "keto",
+    "low_carb",
+    "high_protein",
+    "general"
+   ],
+   "allergens": [
+    "milk"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Chicken thigh": "Meat & fish",
+    "Broccoli": "Produce",
+    "Cauliflower rice": "Produce",
+    "Butter": "Dairy & eggs"
+   }
+  },
+  {
+   "id": "avocado_egg_plate",
+   "name": "Avocado and egg plate",
+   "description": "Boiled eggs with half an avocado, tomato and olive oil.",
+   "cuisine": "General",
+   "slots": [
+    "breakfast",
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 10,
+   "costTier": 2,
+   "perServing": {
+    "kcal": 382,
+    "proteinG": 16,
+    "carbsG": 12,
+    "fatG": 30,
+    "fiberG": 8,
+    "sodiumMg": 260
+   },
+   "ingredients": [
+    {
+     "name": "Eggs",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Avocado",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 80,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Olive oil",
+     "grams": 5,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Boil eggs to your liking.",
+    "Plate with sliced avocado and tomato; drizzle oil."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "keto",
+    "low_carb",
+    "vegetarian",
+    "whole_food",
+    "general"
+   ],
+   "allergens": [
+    "egg"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Eggs": "Dairy & eggs",
+    "Avocado": "Produce",
+    "Tomato": "Produce",
+    "Olive oil": "Pantry"
+   }
+  },
+  {
+   "id": "pancit_bihon_meal",
+   "name": "Pancit bihon",
+   "description": "Filipino rice-noodle stir-fry with chicken and vegetables.",
+   "cuisine": "Filipino",
+   "slots": [
+    "lunch",
+    "dinner"
+   ],
+   "servings": 4,
+   "prepMinutes": 35,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 330,
+    "proteinG": 15,
+    "carbsG": 45,
+    "fatG": 10,
+    "fiberG": 3.5,
+    "sodiumMg": 1030
+   },
+   "ingredients": [
+    {
+     "name": "Pancit bihon with chicken and vegetables",
+     "grams": 250,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Soak noodles; stir-fry chicken and vegetables.",
+    "Add noodles and sauce; toss until absorbed."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "general",
+    "balanced"
+   ],
+   "allergens": [
+    "soy"
+   ],
+   "assumptions": "Sodium from soy sauce; use low-sodium soy sauce to reduce it.",
+   "groceryCategory": {
+    "Pancit bihon with chicken and vegetables": "Prepared"
+   }
+  },
+  {
+   "id": "fruit_nut_plate",
+   "name": "Fruit and nut plate",
+   "description": "Seasonal fruit with a small handful of almonds.",
+   "cuisine": "General",
+   "slots": [
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 5,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 315,
+    "proteinG": 7,
+    "carbsG": 38,
+    "fatG": 15,
+    "fiberG": 7.6,
+    "sodiumMg": 5
+   },
+   "ingredients": [
+    {
+     "name": "Apple or mango",
+     "grams": 182,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Almonds",
+     "grams": 28,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Slice fruit; serve with almonds."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "mediterranean",
+    "whole_food",
+    "high_fiber",
+    "low_sodium",
+    "dash",
+    "general",
+    "balanced"
+   ],
+   "allergens": [
+    "tree nut"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Apple or mango": "Produce",
+    "Almonds": "Pantry"
+   }
+  },
+  {
+   "id": "veggie_hummus_snack",
+   "name": "Vegetable sticks with hummus",
+   "description": "Carrot and cucumber sticks with creamy hummus.",
+   "cuisine": "Mediterranean",
+   "slots": [
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 8,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 214,
+    "proteinG": 9,
+    "carbsG": 22,
+    "fatG": 10,
+    "fiberG": 8,
+    "sodiumMg": 420
+   },
+   "ingredients": [
+    {
+     "name": "Hummus",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Carrot",
+     "grams": 122,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Cucumber",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Cut vegetables into sticks; serve with hummus."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "mediterranean",
+    "dash",
+    "high_fiber",
+    "general",
+    "balanced"
+   ],
+   "allergens": [
+    "sesame"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Hummus": "Chilled",
+    "Carrot": "Produce",
+    "Cucumber": "Produce"
+   }
+  },
+  {
+   "id": "cottage_cheese_snack",
+   "name": "Cottage cheese with tomato",
+   "description": "Savory high-protein snack with cracked pepper.",
+   "cuisine": "General",
+   "slots": [
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 3,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 119,
+    "proteinG": 14,
+    "carbsG": 9,
+    "fatG": 3,
+    "fiberG": 1.2,
+    "sodiumMg": 400
+   },
+   "ingredients": [
+    {
+     "name": "Cottage cheese",
+     "grams": 113,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Tomato",
+     "grams": 123,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Black pepper",
+     "grams": 1,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Combine and season."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegetarian",
+    "high_protein",
+    "keto",
+    "low_carb",
+    "general",
+    "balanced"
+   ],
+   "allergens": [
+    "milk"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Cottage cheese": "Other",
+    "Tomato": "Produce",
+    "Black pepper": "Pantry"
+   }
+  },
+  {
+   "id": "boiled_eggs_snack",
+   "name": "Two boiled eggs",
+   "description": "Simple protein snack, good warm or cold.",
+   "cuisine": "General",
+   "slots": [
+    "snack"
+   ],
+   "servings": 1,
+   "prepMinutes": 12,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 155,
+    "proteinG": 13,
+    "carbsG": 1,
+    "fatG": 11,
+    "fiberG": 0,
+    "sodiumMg": 250
+   },
+   "ingredients": [
+    {
+     "name": "Eggs",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Boil eggs 7–10 minutes; cool in cold water."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "keto",
+    "low_carb",
+    "high_protein",
+    "vegetarian",
+    "whole_food",
+    "general",
+    "balanced",
+    "low_sodium"
+   ],
+   "allergens": [
+    "egg"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Eggs": "Dairy & eggs"
+   }
+  },
+  {
+   "id": "banana_oat_pancakes",
+   "name": "Banana oat pancakes",
+   "description": "Three-ingredient pancakes from oats, banana and eggs.",
+   "cuisine": "General",
+   "slots": [
+    "breakfast"
+   ],
+   "servings": 2,
+   "prepMinutes": 20,
+   "costTier": 1,
+   "perServing": {
+    "kcal": 344,
+    "proteinG": 14,
+    "carbsG": 45,
+    "fatG": 12,
+    "fiberG": 5.6,
+    "sodiumMg": 190
+   },
+   "ingredients": [
+    {
+     "name": "Rolled oats",
+     "grams": 60,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Banana",
+     "grams": 118,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Eggs",
+     "grams": 100,
+     "note": null,
+     "substitutes": []
+    },
+    {
+     "name": "Oil for the pan",
+     "grams": 5,
+     "note": null,
+     "substitutes": []
+    }
+   ],
+   "steps": [
+    "Blend all ingredients into a batter.",
+    "Cook small pancakes 2 minutes per side."
+   ],
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "tags": [
+    "vegetarian",
+    "balanced",
+    "high_fiber",
+    "whole_food",
+    "low_sodium",
+    "general"
+   ],
+   "allergens": [
+    "egg",
+    "gluten"
+   ],
+   "assumptions": "Estimated from the listed ingredient weights using USDA per-100 g values.",
+   "groceryCategory": {
+    "Rolled oats": "Grains & bread",
+    "Banana": "Produce",
+    "Eggs": "Dairy & eggs",
+    "Oil for the pan": "Pantry"
+   }
+  }
+ ]
+}
