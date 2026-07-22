@@ -5,7 +5,10 @@ rules_version = '2';
 // Principles (see docs/THREAT_MODEL.md):
 //  - Every document is owned by exactly one user; a user can only ever read
 //    or write their own data (per-user authorization).
-//  - App Check is enforced on all requests.
+//  - App Check is enforced at the backend AI Coach endpoint (see
+//    backend/functions/src/index.ts). Direct Firestore access is guarded by
+//    per-user authentication; App Check is not required here because the
+//    local-first client reaches Firestore without the App Check SDK.
 //  - AI conversations and health details are written by the client to the
 //    owner's subtree only; the backend uses the Admin SDK (which bypasses
 //    these rules) for privileged operations like account deletion.
@@ -20,11 +23,6 @@ service cloud.firestore {
 
     function isOwner(uid) {
       return isSignedIn() && request.auth.uid == uid;
-    }
-
-    // App Check: require a valid token on every request in production.
-    function appCheckOk() {
-      return request.auth != null && request.auth.token != null;
     }
 
     // A user's private document tree. All personal, diet, health and
