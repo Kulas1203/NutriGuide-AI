@@ -83,6 +83,11 @@ void main() {
       expect(req.headers['Authorization'], 'Bearer id-token-abc');
     });
 
+    test('posts to the coachAsk function endpoint', () async {
+      final req = await capture(const NoopAppCheckService());
+      expect(req.uri.toString(), 'https://backend.example/coachAsk');
+    });
+
     test('omits the App Check header when no token is available', () async {
       final req = await capture(const NoopAppCheckService());
       expect(req.headers.containsKey('X-Firebase-AppCheck'), isFalse);

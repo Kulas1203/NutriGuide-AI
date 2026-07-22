@@ -95,7 +95,11 @@ class BackendCoachService implements CoachService {
       'X-Firebase-AppCheck': ?appCheckToken,
     };
     final response = await _dio.post<ResponseBody>(
-      '$_baseUrl/coach/ask',
+      // The deployed Cloud Function is named `coachAsk`; Cloud Functions
+      // routes by the first path segment, so the endpoint is
+      // {BACKEND_BASE_URL}/coachAsk (BACKEND_BASE_URL is the functions domain,
+      // e.g. https://<region>-<project>.cloudfunctions.net).
+      '$_baseUrl/coachAsk',
       data: {
         'question': question,
         'context': context.toJson(),
