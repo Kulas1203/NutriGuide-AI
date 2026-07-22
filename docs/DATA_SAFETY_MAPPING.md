@@ -47,8 +47,12 @@ data).
 
 - Google Firebase (Auth, Firestore, Storage, App Check, Crashlytics, Cloud
   Messaging, Remote Config) — infrastructure.
-- Configured AI provider (Anthropic Claude via the backend) — generates coach
+- Configured AI provider (DeepSeek via the backend) — generates coach
   answers from the user's question; governed by the AI Transparency Notice.
+  ACTION REQUIRED before launch: confirm DeepSeek's data-residency, retention
+  and training-use terms and reflect them in the Privacy Policy and the Play
+  Data Safety form. Only the user's typed question and non-identifying context
+  are sent (no account identifiers); requests are not used to expose secrets.
 
 ## Notifications & lock screen
 

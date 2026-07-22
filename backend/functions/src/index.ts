@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 import { HttpsError, onCall, onRequest } from 'firebase-functions/v2/https';
 import { defineSecret, defineString } from 'firebase-functions/params';
 
-import { AnthropicProvider } from './ai/anthropicProvider';
+import { DeepSeekProvider } from './ai/deepseekProvider';
 import { Orchestrator, CoachContext } from './ai/orchestrator';
 import { setKnowledgeStore } from './ai/grounding';
 import { checkAndIncrementRateLimit } from './middleware/rateLimit';
@@ -14,8 +14,11 @@ initializeApp();
 
 // Secrets and config. Model ID is a non-secret parameter so it can be changed
 // (after passing the eval suite) without redeploying secrets.
-const ANTHROPIC_API_KEY = defineSecret('ANTHROPIC_API_KEY');
-const MODEL_ID = defineString('MODEL_ID', { default: 'claude-sonnet-5' });
+const DEEPSEEK_API_KEY = defineSecret('DEEPSEEK_API_KEY');
+const MODEL_ID = defineString('MODEL_ID', { default: 'deepseek-chat' });
+const DEEPSEEK_BASE_URL = defineString('DEEPSEEK_BASE_URL', {
+  default: 'https://api.deepseek.com',
+});
 const DAILY_AI_LIMIT = defineString('DAILY_AI_LIMIT', { default: '150' });
 
 // Optional: wire the reviewed knowledge base for retrieval grounding. Until a
@@ -45,7 +48,7 @@ function requireAuth(auth: { uid?: string } | undefined): string {
  */
 export const coachAsk = onRequest(
   {
-    secrets: [ANTHROPIC_API_KEY],
+    secrets: [DEEPSEEK_API_KEY],
     cors: false,
     timeoutSeconds: 60,
     memory: '512MiB',
@@ -99,9 +102,10 @@ export const coachAsk = onRequest(
       return;
     }
 
-    const provider = new AnthropicProvider(
-      ANTHROPIC_API_KEY.value(),
-      MODEL_ID.value()
+    const provider = new DeepSeekProvider(
+      DEEPSEEK_API_KEY.value(),
+      MODEL_ID.value(),
+      DEEPSEEK_BASE_URL.value()
     );
     const orchestrator = new Orchestrator(provider, null);
 

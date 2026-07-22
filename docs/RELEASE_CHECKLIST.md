@@ -16,7 +16,7 @@ Increment the build number every upload. Tag releases `vMAJOR.MINOR.PATCH`.
 
 ## Backend
 
-- [ ] Secrets set (`ANTHROPIC_API_KEY`); `MODEL_ID` pinned to an evaluated model.
+- [ ] Secrets set (`DEEPSEEK_API_KEY`); `MODEL_ID` pinned to an evaluated model.
 - [ ] `firebase deploy --only firestore:rules,firestore:indexes,functions,storage`.
 - [ ] App Check enforced; Play Integrity provider configured.
 - [ ] Firestore TTL policy on `rateLimits.expireAt`.

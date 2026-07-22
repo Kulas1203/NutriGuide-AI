@@ -26,7 +26,7 @@
 
 - **`enforceAppCheck` type error** — only valid on `onCall`; `onRequest`
   verifies App Check manually via `X-Firebase-AppCheck` (see `index.ts`).
-- **Deploy fails on secrets** — set `ANTHROPIC_API_KEY` via
+- **Deploy fails on secrets** — set `DEEPSEEK_API_KEY` via
   `firebase functions:secrets:set` before deploy.
 
 ## AI evals

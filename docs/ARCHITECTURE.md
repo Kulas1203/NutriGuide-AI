@@ -61,7 +61,7 @@ flowchart TB
     APPCHK["App Check / Play Integrity"]
     SM["Secret Manager"]
   end
-  AI["AI provider (Claude)"]
+  AI["AI provider (DeepSeek)"]
 
   REPO -->|"ID token + App Check"| FN
   REPO -->|auth| AUTH

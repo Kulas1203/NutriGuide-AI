@@ -41,7 +41,9 @@ firebase use dev
 # Configure secrets (never commit these)
 cd functions
 cp .env.example .env                  # fill non-secret params (MODEL_ID, etc.)
-firebase functions:secrets:set ANTHROPIC_API_KEY
+# Get a DeepSeek API key from https://platform.deepseek.com/ (API keys),
+# then store it in Google Secret Manager — it never ships in the app:
+firebase functions:secrets:set DEEPSEEK_API_KEY
 
 npm install
 npm run build
