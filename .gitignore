@@ -38,3 +38,7 @@ firebase-debug.log
 .vscode/
 *.iml
 .DS_Store
+
+# Filled dart-define configs (contain the Firebase web API key)
+app/config/*.json
+!app/config/*.json.example
