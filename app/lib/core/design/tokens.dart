@@ -78,6 +78,9 @@ abstract final class NGMotion {
   static const Duration slow = Duration(milliseconds: 400);
   static const Curve standard = Curves.easeOutCubic;
 
+  /// Expressive curve for entrances and hero moments.
+  static const Curve emphasized = Curves.easeOutQuart;
+
   /// Returns [Duration.zero] when the platform requests reduced motion, so
   /// animations collapse to instant transitions.
   static Duration of(BuildContext context, Duration duration) {

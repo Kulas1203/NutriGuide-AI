@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// Bottom-navigation shell for the five primary destinations.
+import '../../../core/design/motion.dart';
+
+/// Bottom-navigation shell for the five primary destinations. Tab changes use
+/// a fade-through so switching feels seamless rather than jarring.
 class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.child});
 
@@ -50,7 +53,7 @@ class AppShell extends StatelessWidget {
     final location = GoRouterState.of(context).matchedLocation;
     final index = _indexFor(location);
     return Scaffold(
-      body: child,
+      body: FadeThroughSwitcher(switchKey: index, child: child),
       bottomNavigationBar: NavigationBar(
         selectedIndex: index,
         onDestinationSelected: (i) => context.go(_destinations[i].path),

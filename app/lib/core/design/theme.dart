@@ -62,6 +62,7 @@ abstract final class NGTheme {
 
   static ThemeData _base(ColorScheme scheme, Color strong, Color muted) {
     final textTheme = NGTypography.textTheme(strong, muted);
+    final dark = scheme.brightness == Brightness.dark;
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
@@ -69,6 +70,16 @@ abstract final class NGTheme {
       textTheme: textTheme,
       visualDensity: VisualDensity.standard,
       splashFactory: InkSparkle.splashFactory,
+      // Modern M3 forward transition + Android predictive-back support.
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: FadeForwardsPageTransitionsBuilder(),
+          TargetPlatform.iOS: FadeForwardsPageTransitionsBuilder(),
+          TargetPlatform.linux: FadeForwardsPageTransitionsBuilder(),
+          TargetPlatform.macOS: FadeForwardsPageTransitionsBuilder(),
+          TargetPlatform.windows: FadeForwardsPageTransitionsBuilder(),
+        },
+      ),
       appBarTheme: AppBarTheme(
         backgroundColor: scheme.surface,
         surfaceTintColor: Colors.transparent,
@@ -82,7 +93,14 @@ abstract final class NGTheme {
         surfaceTintColor: Colors.transparent,
         elevation: NGElevation.raised,
         shadowColor: Colors.black.withValues(alpha: 0.08),
-        shape: const RoundedRectangleBorder(borderRadius: NGRadius.card),
+        // Hairline border keeps cards crisply defined on dark surfaces where
+        // shadows are invisible.
+        shape: RoundedRectangleBorder(
+          borderRadius: NGRadius.card,
+          side: dark
+              ? BorderSide(color: scheme.outlineVariant, width: 0.8)
+              : BorderSide.none,
+        ),
         margin: EdgeInsets.zero,
       ),
       filledButtonTheme: FilledButtonThemeData(

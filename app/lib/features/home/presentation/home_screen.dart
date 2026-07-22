@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/design/components.dart';
+import '../../../core/design/motion.dart';
 import '../../../core/design/tokens.dart';
 import '../../../core/network/connectivity.dart';
 import '../../../core/utils/dates.dart';
@@ -99,27 +100,39 @@ class HomeScreen extends ConsumerWidget {
                 ),
               ],
               const SizedBox(height: NGSpacing.xl),
-              _CaloriesCard(consumed: consumed, targets: targets),
-              const SizedBox(height: NGSpacing.lg),
-              Row(
-                children: [
-                  Expanded(child: _NextMealCard()),
-                  const SizedBox(width: NGSpacing.md),
-                  Expanded(child: _FastingCard()),
-                ],
+              Entrance(
+                index: 0,
+                child: _CaloriesCard(consumed: consumed, targets: targets),
               ),
               const SizedBox(height: NGSpacing.lg),
-              Row(
-                children: [
-                  Expanded(child: _WaterCard(target: targets.waterMl)),
-                  const SizedBox(width: NGSpacing.md),
-                  Expanded(child: _HabitCard()),
-                ],
+              Entrance(
+                index: 1,
+                child: Row(
+                  children: [
+                    Expanded(child: _NextMealCard()),
+                    const SizedBox(width: NGSpacing.md),
+                    Expanded(child: _FastingCard()),
+                  ],
+                ),
               ),
               const SizedBox(height: NGSpacing.lg),
-              _CoachShortcut(),
+              Entrance(
+                index: 2,
+                child: Row(
+                  children: [
+                    Expanded(child: _WaterCard(target: targets.waterMl)),
+                    const SizedBox(width: NGSpacing.md),
+                    Expanded(child: _HabitCard()),
+                  ],
+                ),
+              ),
               const SizedBox(height: NGSpacing.lg),
-              _ProgressGlance(hideWeight: profile.hideWeightFeatures),
+              Entrance(index: 3, child: _CoachShortcut()),
+              const SizedBox(height: NGSpacing.lg),
+              Entrance(
+                index: 4,
+                child: _ProgressGlance(hideWeight: profile.hideWeightFeatures),
+              ),
             ],
           ),
         ),
@@ -163,10 +176,9 @@ class _CaloriesCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        remaining >= 0
-                            ? '$remaining kcal left'
-                            : '${-remaining} kcal over',
+                      AnimatedCount(
+                        value: remaining.abs(),
+                        suffix: remaining >= 0 ? ' kcal left' : ' kcal over',
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                       const SizedBox(height: NGSpacing.md),

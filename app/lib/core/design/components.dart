@@ -2,9 +2,11 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import 'motion.dart';
 import 'tokens.dart';
 
-/// Surface card used across the app for grouped content.
+/// Surface card used across the app for grouped content. Tappable cards get
+/// ripple + a subtle press-scale for a tactile, premium feel.
 class NGCard extends StatelessWidget {
   const NGCard({
     super.key,
@@ -21,17 +23,20 @@ class NGCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final card = Card(
-      color: color,
-      child: Padding(padding: padding, child: child),
-    );
-    if (onTap == null) return card;
-    return Card(
-      color: color,
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
+    if (onTap == null) {
+      return Card(
+        color: color,
         child: Padding(padding: padding, child: child),
+      );
+    }
+    return PressableScale(
+      child: Card(
+        color: color,
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onTap,
+          child: Padding(padding: padding, child: child),
+        ),
       ),
     );
   }
@@ -98,14 +103,18 @@ class StatRing extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            SizedBox(
-              width: size,
-              height: size,
-              child: CircularProgressIndicator(
-                value: math.min(progress, 1.0),
-                strokeWidth: 10,
-                strokeCap: StrokeCap.round,
-                color: ringColor,
+            // Animates smoothly toward the current value on every change.
+            TweenAnimationBuilder<double>(
+              tween: Tween(end: math.min(progress, 1.0)),
+              duration: NGMotion.of(context, const Duration(milliseconds: 700)),
+              curve: NGMotion.emphasized,
+              builder: (context, animated, _) => CustomPaint(
+                size: Size.square(size),
+                painter: _RingPainter(
+                  progress: animated,
+                  color: ringColor,
+                  trackColor: scheme.surfaceContainerHighest,
+                ),
               ),
             ),
             Column(
@@ -128,6 +137,56 @@ class StatRing extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Gradient-sweep progress ring with rounded caps.
+class _RingPainter extends CustomPainter {
+  _RingPainter({
+    required this.progress,
+    required this.color,
+    required this.trackColor,
+  });
+
+  final double progress;
+  final Color color;
+  final Color trackColor;
+
+  static const double _stroke = 10;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = size.center(Offset.zero);
+    final radius = (size.shortestSide - _stroke) / 2;
+    final rect = Rect.fromCircle(center: center, radius: radius);
+
+    final track = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = _stroke
+      ..color = trackColor;
+    canvas.drawArc(rect, 0, math.pi * 2, false, track);
+
+    if (progress <= 0) return;
+    const start = -math.pi / 2;
+    final sweep = math.pi * 2 * progress.clamp(0.0, 1.0);
+    final arc = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = _stroke
+      ..strokeCap = StrokeCap.round
+      ..shader = SweepGradient(
+        startAngle: 0,
+        endAngle: math.pi * 2,
+        transform: const GradientRotation(start),
+        colors: [color.withValues(alpha: 0.55), color],
+        stops: const [0.0, 0.75],
+      ).createShader(rect);
+    canvas.drawArc(rect, start, sweep, false, arc);
+  }
+
+  @override
+  bool shouldRepaint(_RingPainter oldDelegate) =>
+      oldDelegate.progress != progress ||
+      oldDelegate.color != color ||
+      oldDelegate.trackColor != trackColor;
 }
 
 /// Labeled linear macro bar (e.g. "Protein 80 / 120 g").
@@ -169,10 +228,15 @@ class MacroBar extends StatelessWidget {
           const SizedBox(height: NGSpacing.xs),
           ClipRRect(
             borderRadius: NGRadius.chip,
-            child: LinearProgressIndicator(
-              value: ratio,
-              minHeight: 8,
-              color: color,
+            child: TweenAnimationBuilder<double>(
+              tween: Tween(end: ratio),
+              duration: NGMotion.of(context, const Duration(milliseconds: 600)),
+              curve: NGMotion.emphasized,
+              builder: (context, animated, _) => LinearProgressIndicator(
+                value: animated,
+                minHeight: 8,
+                color: color,
+              ),
             ),
           ),
         ],

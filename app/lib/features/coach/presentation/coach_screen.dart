@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/config/env.dart';
 import '../../../core/design/components.dart';
+import '../../../core/design/motion.dart';
 import '../../../core/design/tokens.dart';
 import '../../legal/consent.dart';
 import '../application/coach_controller.dart';
@@ -74,8 +75,11 @@ class _CoachScreenState extends ConsumerState<CoachScreen> {
                     controller: _scroll,
                     padding: const EdgeInsets.all(NGSpacing.lg),
                     itemCount: state.messages.length,
-                    itemBuilder: (context, i) =>
-                        _MessageBubble(message: state.messages[i]),
+                    itemBuilder: (context, i) => Entrance(
+                      // No stagger: each newly-appended bubble animates in once.
+                      delayPerItem: Duration.zero,
+                      child: _MessageBubble(message: state.messages[i]),
+                    ),
                   ),
           ),
           if (state.error != null)
