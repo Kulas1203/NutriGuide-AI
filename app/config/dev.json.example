@@ -3,5 +3,6 @@
   "USE_DEV_STUB": false,
   "FIREBASE_PROJECT_ID": "nutriguide-dev",
   "FIREBASE_API_KEY": "PASTE_DEV_WEB_API_KEY_HERE",
-  "BACKEND_BASE_URL": ""
+  "BACKEND_BASE_URL": "",
+  "APP_CHECK_DEBUG_TOKEN": ""
 }

@@ -77,6 +77,12 @@ flutter build appbundle \
 `AppEnvironment.guardProductionIntegrity()` aborts startup if a prod build is
 missing config or still has the dev stub enabled.
 
+**App Check:** the backend refuses Coach calls without a valid App Check
+token. To verify the enforced backend from a dev/web build, register a debug
+token and pass `--dart-define=APP_CHECK_DEBUG_TOKEN=...`; a shipped Android
+release mints real Play Integrity tokens via the native plugin. Both paths
+plug in behind the same `AppCheckService` seam — see **docs/APP_CHECK.md**.
+
 ## 4. AI grounding knowledge base (optional but recommended)
 
 Populate the reviewed `/reference/**` Firestore collection with versioned

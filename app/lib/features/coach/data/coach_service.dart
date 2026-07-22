@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 
 import '../../../core/config/env.dart';
 import '../domain/chat_message.dart';
+import 'app_check_service.dart';
 
 /// Context sent to the backend so the coach can personalize safely. Contains
 /// no direct identifiers beyond the auth token used at the transport layer.
@@ -67,12 +68,14 @@ abstract class CoachService {
 
 /// Production coach client. Streams NDJSON from the backend AI endpoint.
 class BackendCoachService implements CoachService {
-  BackendCoachService({Dio? dio, String? baseUrl})
+  BackendCoachService({Dio? dio, String? baseUrl, AppCheckService? appCheck})
     : _dio = dio ?? Dio(),
-      _baseUrl = baseUrl ?? AppEnvironment.backendBaseUrl;
+      _baseUrl = baseUrl ?? AppEnvironment.backendBaseUrl,
+      _appCheck = appCheck ?? defaultAppCheckService();
 
   final Dio _dio;
   final String _baseUrl;
+  final AppCheckService _appCheck;
 
   @override
   Stream<CoachChunk> ask({
@@ -84,6 +87,13 @@ class BackendCoachService implements CoachService {
     if (_baseUrl.isEmpty) {
       throw CoachException('The AI Coach backend is not configured.');
     }
+    // Firebase App Check token: the backend rejects Coach calls without a
+    // valid X-Firebase-AppCheck header (blocks automated abuse).
+    final appCheckToken = await _appCheck.token();
+    final headers = <String, String>{
+      if (authToken != null) 'Authorization': 'Bearer $authToken',
+      'X-Firebase-AppCheck': ?appCheckToken,
+    };
     final response = await _dio.post<ResponseBody>(
       '$_baseUrl/coach/ask',
       data: {
@@ -96,9 +106,7 @@ class BackendCoachService implements CoachService {
       },
       options: Options(
         responseType: ResponseType.stream,
-        headers: authToken == null
-            ? null
-            : {'Authorization': 'Bearer $authToken'},
+        headers: headers.isEmpty ? null : headers,
       ),
     );
     final stream = response.data;

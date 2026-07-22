@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../core/config/env.dart';
 import '../core/storage/local_store.dart';
 import '../features/auth/data/auth_service.dart';
+import '../features/coach/data/app_check_service.dart';
 import '../features/coach/data/coach_repository.dart';
 import '../features/coach/data/coach_service.dart';
 import '../features/coach/data/dev_coach_service.dart';
@@ -48,9 +49,13 @@ final authServiceProvider = Provider<AuthService>((ref) {
   return DevLocalAuthService(ref.watch(sharedPreferencesProvider));
 });
 
+final appCheckServiceProvider = Provider<AppCheckService>(
+  (ref) => defaultAppCheckService(),
+);
+
 final coachServiceProvider = Provider<CoachService>((ref) {
   if (AppEnvironment.hasBackend) {
-    return BackendCoachService();
+    return BackendCoachService(appCheck: ref.watch(appCheckServiceProvider));
   }
   return DevCoachService();
 });

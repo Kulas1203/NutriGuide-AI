@@ -3,5 +3,6 @@
   "USE_DEV_STUB": false,
   "FIREBASE_PROJECT_ID": "nutriguide-prod",
   "FIREBASE_API_KEY": "PASTE_PROD_WEB_API_KEY_HERE",
-  "BACKEND_BASE_URL": "https://REGION-nutriguide-prod.cloudfunctions.net"
+  "BACKEND_BASE_URL": "https://REGION-nutriguide-prod.cloudfunctions.net",
+  "APP_CHECK_DEBUG_TOKEN": ""
 }

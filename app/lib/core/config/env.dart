@@ -31,6 +31,16 @@ abstract final class AppEnvironment {
     'BACKEND_BASE_URL',
   );
 
+  /// Optional Firebase App Check debug token (dev/staging only).
+  ///
+  /// Registered in the Firebase console (App Check → Manage debug tokens) so
+  /// the enforced backend can be exercised from the web/dev build that ships
+  /// no native SDK. Supplied via `--dart-define`, never committed. Production
+  /// Android builds mint real Play Integrity tokens instead (docs/APP_CHECK.md).
+  static const String appCheckDebugToken = String.fromEnvironment(
+    'APP_CHECK_DEBUG_TOKEN',
+  );
+
   /// True when Firebase auth + sync are configured for this build.
   static bool get hasFirebase =>
       firebaseProjectId.isNotEmpty && firebaseApiKey.isNotEmpty;
