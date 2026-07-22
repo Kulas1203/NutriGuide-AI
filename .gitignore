@@ -5,6 +5,7 @@
 **/google-services.json
 **/serviceAccount*.json
 **/.env
+**/.env.*
 !**/.env.example
 
 # Flutter / Dart
