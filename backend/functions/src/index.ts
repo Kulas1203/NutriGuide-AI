@@ -20,6 +20,13 @@ const DEEPSEEK_BASE_URL = defineString('DEEPSEEK_BASE_URL', {
   default: 'https://api.deepseek.com',
 });
 const DAILY_AI_LIMIT = defineString('DAILY_AI_LIMIT', { default: '150' });
+// App Check enforcement. Defaults to enforced (fail-closed). May be set to
+// 'false' ONLY for a development project that is verified from a client
+// without the native App Check SDK (e.g. the Flutter web build). Production
+// and native Android/iOS builds must keep this enforced.
+const APP_CHECK_ENFORCED = defineString('APP_CHECK_ENFORCED', {
+  default: 'true',
+});
 
 // Optional: wire the reviewed knowledge base for retrieval grounding. Until a
 // KnowledgeStore is provided, grounding returns an empty set (the model then
@@ -65,18 +72,23 @@ export const coachAsk = onRequest(
     }
     // App Check: streaming onRequest handlers verify the token manually
     // (enforceAppCheck is only available on onCall). Reject requests without
-    // a valid App Check token to block automated abuse.
-    const appCheckToken = request.get('X-Firebase-AppCheck');
-    if (!appCheckToken) {
-      response.status(401).send('App Check required');
-      return;
-    }
-    try {
-      const { getAppCheck } = await import('firebase-admin/app-check');
-      await getAppCheck().verifyToken(appCheckToken);
-    } catch {
-      response.status(401).send('Invalid App Check token');
-      return;
+    // a valid App Check token to block automated abuse. Enforcement can be
+    // disabled per-environment (APP_CHECK_ENFORCED=false) for a dev project
+    // exercised from a client without the native App Check SDK; production
+    // stays fail-closed by default.
+    if (APP_CHECK_ENFORCED.value() !== 'false') {
+      const appCheckToken = request.get('X-Firebase-AppCheck');
+      if (!appCheckToken) {
+        response.status(401).send('App Check required');
+        return;
+      }
+      try {
+        const { getAppCheck } = await import('firebase-admin/app-check');
+        await getAppCheck().verifyToken(appCheckToken);
+      } catch {
+        response.status(401).send('Invalid App Check token');
+        return;
+      }
     }
     // The client sends a Firebase ID token; verify via the Admin SDK.
     const authHeader = request.get('Authorization') ?? '';
