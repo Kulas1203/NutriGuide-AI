@@ -1,3 +1,9 @@
+// Named parameters cannot be initializing formals for private fields
+// (Dart forbids `this._x` as a named parameter), so the constructor assigns
+// them in its initializer list.
+// ignore_for_file: prefer_initializing_formals
+import 'package:dio/dio.dart';
+
 import '../../../core/config/env.dart';
 
 /// Firebase App Check boundary.
@@ -14,12 +20,13 @@ import '../../../core/config/env.dart';
 ///  * [NoopAppCheckService] — no token (dev builds / App Check not yet
 ///    configured). The backend will refuse Coach calls, which is correct:
 ///    dev builds use [DevCoachService] and never hit the backend.
-///  * [DebugAppCheckService] — returns a debug token supplied at build time
-///    via `--dart-define=APP_CHECK_DEBUG_TOKEN=...`. Debug tokens are
-///    registered in the Firebase console (App Check → Apps → Manage debug
-///    tokens) and are valid in the `X-Firebase-AppCheck` header from any
-///    transport, so they let staging/dev verify the full App Check-enforced
-///    Coach flow (including from the web/Chrome build) without the native SDK.
+///  * [DebugAppCheckService] — exchanges an App Check *debug token* (a secret
+///    registered in the Firebase console, App Check → Apps → Manage debug
+///    tokens) for a real, short-lived App Check token via Firebase's
+///    `exchangeDebugToken` endpoint. This lets staging/dev verify the full
+///    App Check-enforced Coach flow (including from the web/Chrome build)
+///    without the native SDK. The raw debug token is NOT a valid App Check
+///    token on its own — it must be exchanged first, exactly as the SDK does.
 ///
 /// For a signed Android production release, a real Play Integrity token must
 /// be minted by the native `firebase_app_check` plugin. That path is added at
@@ -40,32 +47,88 @@ class NoopAppCheckService implements AppCheckService {
   Future<String?> token() async => null;
 }
 
-/// Returns a Firebase App Check debug token supplied at build time.
+/// Exchanges a Firebase App Check *debug token* for a real App Check token.
 ///
-/// The token is a public-per-environment identifier registered in the
-/// Firebase console, not a secret in the cryptographic sense, but it is still
-/// provided via `--dart-define` (never committed) and only used for
-/// dev/staging verification.
+/// Debug tokens are registered per-app in the Firebase console and are only
+/// meant for development/CI. The exchange calls the public App Check REST
+/// endpoint with the project's public web API key; the returned token is
+/// short-lived and cached until shortly before it expires.
 class DebugAppCheckService implements AppCheckService {
-  const DebugAppCheckService(this._debugToken);
+  DebugAppCheckService({
+    required String debugToken,
+    required String appId,
+    required String projectNumber,
+    required String apiKey,
+    Dio? dio,
+  }) : _debugToken = debugToken,
+       _appId = appId,
+       _projectNumber = projectNumber,
+       _apiKey = apiKey,
+       _dio = dio ?? Dio();
 
   final String _debugToken;
+  final String _appId;
+  final String _projectNumber;
+  final String _apiKey;
+  final Dio _dio;
+
+  String? _cachedToken;
+  DateTime? _expiry;
+
+  bool get _configured =>
+      _debugToken.isNotEmpty &&
+      _appId.isNotEmpty &&
+      _projectNumber.isNotEmpty &&
+      _apiKey.isNotEmpty;
 
   @override
-  Future<String?> token() async =>
-      _debugToken.isEmpty ? null : _debugToken;
+  Future<String?> token() async {
+    if (!_configured) return null;
+    if (_cachedToken != null &&
+        _expiry != null &&
+        DateTime.now().isBefore(
+          _expiry!.subtract(const Duration(minutes: 1)),
+        )) {
+      return _cachedToken;
+    }
+    try {
+      final response = await _dio.post<Map<String, dynamic>>(
+        'https://firebaseappcheck.googleapis.com/v1/projects/'
+        '$_projectNumber/apps/$_appId:exchangeDebugToken',
+        queryParameters: {'key': _apiKey},
+        data: {'debugToken': _debugToken},
+      );
+      final data = response.data ?? const {};
+      final token = data['token'] as String?;
+      if (token == null) return null;
+      _cachedToken = token;
+      // ttl looks like "3600s"; default to an hour if it can't be parsed.
+      final ttl = (data['ttl'] as String?)?.replaceAll('s', '') ?? '';
+      final seconds = int.tryParse(ttl) ?? 3600;
+      _expiry = DateTime.now().add(Duration(seconds: seconds));
+      return token;
+    } on DioException {
+      // If the exchange fails, send no token; the backend will 401 and the
+      // Coach surfaces a "could not be reached" message rather than crashing.
+      return null;
+    }
+  }
 }
 
 /// Selects the App Check implementation for the current build.
 ///
-/// A debug token, when provided, is used regardless of flavor so staging can
-/// exercise the enforced backend. Otherwise no token is sent (dev builds do
-/// not reach the backend; a production Android build wires the native
-/// Play Integrity provider — see docs/APP_CHECK.md).
+/// A debug token, when fully configured, is used regardless of flavor so
+/// staging can exercise the enforced backend. Otherwise no token is sent (dev
+/// builds do not reach the backend; a production Android build wires the
+/// native Play Integrity provider — see docs/APP_CHECK.md).
 AppCheckService defaultAppCheckService() {
-  final debugToken = AppEnvironment.appCheckDebugToken;
-  if (debugToken.isNotEmpty) {
-    return DebugAppCheckService(debugToken);
+  if (AppEnvironment.appCheckDebugToken.isNotEmpty) {
+    return DebugAppCheckService(
+      debugToken: AppEnvironment.appCheckDebugToken,
+      appId: AppEnvironment.firebaseAppId,
+      projectNumber: AppEnvironment.firebaseProjectNumber,
+      apiKey: AppEnvironment.firebaseApiKey,
+    );
   }
   return const NoopAppCheckService();
 }

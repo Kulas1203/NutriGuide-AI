@@ -31,12 +31,24 @@ abstract final class AppEnvironment {
     'BACKEND_BASE_URL',
   );
 
+  /// Firebase application id (public identifier), e.g.
+  /// `1:461669117225:web:abcdef...`. Needed to exchange an App Check debug
+  /// token for a real App Check token.
+  static const String firebaseAppId = String.fromEnvironment('FIREBASE_APP_ID');
+
+  /// Firebase project number (public identifier), e.g. `461669117225`. Used in
+  /// the App Check debug-token exchange endpoint path.
+  static const String firebaseProjectNumber = String.fromEnvironment(
+    'FIREBASE_PROJECT_NUMBER',
+  );
+
   /// Optional Firebase App Check debug token (dev/staging only).
   ///
-  /// Registered in the Firebase console (App Check → Manage debug tokens) so
-  /// the enforced backend can be exercised from the web/dev build that ships
-  /// no native SDK. Supplied via `--dart-define`, never committed. Production
-  /// Android builds mint real Play Integrity tokens instead (docs/APP_CHECK.md).
+  /// Registered in the Firebase console (App Check → Manage debug tokens). The
+  /// client exchanges it for a real App Check token so the enforced backend
+  /// can be exercised from the web/dev build that ships no native SDK.
+  /// Supplied via `--dart-define`, never committed. Production Android builds
+  /// mint real Play Integrity tokens instead (docs/APP_CHECK.md).
   static const String appCheckDebugToken = String.fromEnvironment(
     'APP_CHECK_DEBUG_TOKEN',
   );

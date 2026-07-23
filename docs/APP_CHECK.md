@@ -13,8 +13,13 @@ Check token minting is expressed as a small interface,
 
 - `NoopAppCheckService` — no token. Used by dev builds, which route the Coach
   to the offline `DevCoachService` and never reach the backend.
-- `DebugAppCheckService` — returns a debug token supplied at build time via
-  `--dart-define=APP_CHECK_DEBUG_TOKEN=...`.
+- `DebugAppCheckService` — takes an App Check *debug token* supplied at build
+  time via `--dart-define=APP_CHECK_DEBUG_TOKEN=...` and **exchanges** it for a
+  real, short-lived App Check token through Firebase's public
+  `exchangeDebugToken` endpoint (the raw debug token is not itself a valid
+  App Check token — the native SDK performs the same exchange internally). The
+  exchange needs `FIREBASE_APP_ID` and `FIREBASE_PROJECT_NUMBER` in addition to
+  the debug token and web API key.
 
 `BackendCoachService` reads the token and attaches the header on every Coach
 request; `defaultAppCheckService()` selects the implementation from the build
@@ -28,10 +33,15 @@ build without any native SDK, using a **debug token**:
 1. Firebase console → **App Check** → **Apps** → your app → **⋮ →
    Manage debug tokens** → **Add debug token**. Give it a name (e.g.
    `local-web-dev`) and copy the generated UUID.
-2. Put it in your (git-ignored) config, e.g. `app/config/dev.json`:
+2. Put it — plus the app id and project number — in your (git-ignored)
+   config, e.g. `app/config/dev.json`:
    ```json
+   "FIREBASE_APP_ID": "1:461669117225:web:...",
+   "FIREBASE_PROJECT_NUMBER": "461669117225",
    "APP_CHECK_DEBUG_TOKEN": "the-uuid-from-the-console"
    ```
+   (App id and project number are on the Firebase console's Project settings →
+   General page; the debug token must be registered under that same app.)
 3. Run with the backend wired up:
    ```bash
    flutter run -d chrome --dart-define-from-file=config/dev.json
