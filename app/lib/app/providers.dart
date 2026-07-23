@@ -39,7 +39,11 @@ final sharedPreferencesProvider = Provider<SharedPreferences>(
   (ref) => throw UnimplementedError('sharedPreferencesProvider not overridden'),
 );
 
-final localStoreProvider = Provider<LocalStore>((ref) => LocalStore());
+final localStoreProvider = Provider<LocalStore>(
+  // On web, LocalStore persists through SharedPreferences (localStorage)
+  // because dart:io/path_provider are unavailable; on mobile it uses files.
+  (ref) => LocalStore(prefs: ref.watch(sharedPreferencesProvider)),
+);
 
 final authServiceProvider = Provider<AuthService>((ref) {
   if (AppEnvironment.hasFirebase) {
