@@ -49,7 +49,12 @@ function requireAuth(auth: { uid?: string } | undefined): string {
 export const coachAsk = onRequest(
   {
     secrets: [DEEPSEEK_API_KEY],
-    cors: false,
+    // Allow cross-origin calls (needed for the Flutter web build, whose
+    // origin differs from the functions domain). This does not weaken
+    // security: every request must still carry a valid App Check token and
+    // Firebase ID token — a foreign origin has neither. Native Android/iOS
+    // builds do not use CORS at all.
+    cors: true,
     timeoutSeconds: 60,
     memory: '512MiB',
   },
