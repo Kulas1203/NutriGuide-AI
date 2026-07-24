@@ -41,9 +41,12 @@ firebase use dev
 # Configure secrets (never commit these)
 cd functions
 cp .env.example .env                  # fill non-secret params (MODEL_ID, etc.)
-# Get a DeepSeek API key from https://platform.deepseek.com/ (API keys),
-# then store it in Google Secret Manager — it never ships in the app:
-firebase functions:secrets:set DEEPSEEK_API_KEY
+# The Coach uses any OpenAI-compatible endpoint; the default is Groq's free
+# tier. Get a key at https://console.groq.com/keys, then store it in Google
+# Secret Manager — it never ships in the app:
+firebase functions:secrets:set AI_API_KEY
+# To use a different provider, set AI_BASE_URL / MODEL_ID accordingly
+# (e.g. DeepSeek: https://api.deepseek.com, deepseek-chat).
 
 npm install
 npm run build

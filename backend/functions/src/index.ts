@@ -3,7 +3,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 import { HttpsError, onCall, onRequest } from 'firebase-functions/v2/https';
 import { defineSecret, defineString } from 'firebase-functions/params';
 
-import { DeepSeekProvider } from './ai/deepseekProvider';
+import { OpenAiCompatibleProvider } from './ai/openAiCompatibleProvider';
 import { Orchestrator, CoachContext } from './ai/orchestrator';
 import { setKnowledgeStore } from './ai/grounding';
 import { checkAndIncrementRateLimit } from './middleware/rateLimit';
@@ -14,11 +14,16 @@ initializeApp();
 
 // Secrets and config. Model ID is a non-secret parameter so it can be changed
 // (after passing the eval suite) without redeploying secrets.
-const DEEPSEEK_API_KEY = defineSecret('DEEPSEEK_API_KEY');
-const MODEL_ID = defineString('MODEL_ID', { default: 'deepseek-chat' });
-const DEEPSEEK_BASE_URL = defineString('DEEPSEEK_BASE_URL', {
-  default: 'https://api.deepseek.com',
+// The AI provider is any OpenAI-compatible endpoint, selected via AI_BASE_URL
+// and MODEL_ID. Defaults target Groq's free tier. The key is provider-neutral.
+const AI_API_KEY = defineSecret('AI_API_KEY');
+const MODEL_ID = defineString('MODEL_ID', {
+  default: 'llama-3.3-70b-versatile',
 });
+const AI_BASE_URL = defineString('AI_BASE_URL', {
+  default: 'https://api.groq.com/openai/v1',
+});
+const AI_PROVIDER_NAME = defineString('AI_PROVIDER_NAME', { default: 'groq' });
 const DAILY_AI_LIMIT = defineString('DAILY_AI_LIMIT', { default: '150' });
 // App Check enforcement. Defaults to enforced (fail-closed). May be set to
 // 'false' ONLY for a development project that is verified from a client
@@ -55,7 +60,7 @@ function requireAuth(auth: { uid?: string } | undefined): string {
  */
 export const coachAsk = onRequest(
   {
-    secrets: [DEEPSEEK_API_KEY],
+    secrets: [AI_API_KEY],
     // Allow cross-origin calls (needed for the Flutter web build, whose
     // origin differs from the functions domain). This does not weaken
     // security: every request must still carry a valid App Check token and
@@ -119,10 +124,11 @@ export const coachAsk = onRequest(
       return;
     }
 
-    const provider = new DeepSeekProvider(
-      DEEPSEEK_API_KEY.value(),
+    const provider = new OpenAiCompatibleProvider(
+      AI_API_KEY.value(),
       MODEL_ID.value(),
-      DEEPSEEK_BASE_URL.value()
+      AI_BASE_URL.value(),
+      AI_PROVIDER_NAME.value()
     );
     const orchestrator = new Orchestrator(provider, null);
 

@@ -7,31 +7,33 @@ import {
 } from './provider';
 
 /**
- * Production AI provider backed by DeepSeek.
+ * AI provider backed by any OpenAI-compatible chat-completions API.
  *
- * DeepSeek exposes an OpenAI-compatible API, so we use the `openai` SDK
- * pointed at DeepSeek's base URL. The API key is read from the secret manager
- * (never the client). The model version is configurable via MODEL_ID so it can
- * be upgraded after passing the evaluation suite (ai_evals/) without an app
- * release.
+ * Works with Groq, DeepSeek, OpenRouter, Together, a local server, etc. — the
+ * endpoint is chosen via `baseURL` and the model via `model`, both supplied
+ * from server config (never the client). The API key is read from the secret
+ * manager. The default deployment uses Groq's free tier.
  *
- * Structured output uses DeepSeek's JSON mode: the model is instructed to
- * return exactly the CoachAnswer schema and the response is parsed strictly.
- * To keep the streaming UX, the incremental `text` field is extracted from the
- * growing JSON buffer and emitted via onDelta as the answer forms — rather
- * than showing the user raw JSON.
+ * Structured output uses JSON mode: the model is instructed to return exactly
+ * the CoachAnswer schema and the response is parsed strictly. To keep the
+ * streaming UX, the incremental `text` field is extracted from the growing
+ * JSON buffer and emitted via onDelta as the answer forms — rather than
+ * showing the user raw JSON.
  */
-export class DeepSeekProvider implements AiProvider {
-  readonly name = 'deepseek';
+export class OpenAiCompatibleProvider implements AiProvider {
+  readonly name: string;
   private readonly client: OpenAI;
   private readonly model: string;
 
-  constructor(apiKey: string, model: string, baseURL?: string) {
-    this.client = new OpenAI({
-      apiKey,
-      baseURL: baseURL ?? 'https://api.deepseek.com',
-    });
+  constructor(
+    apiKey: string,
+    model: string,
+    baseURL: string,
+    name = 'openai-compatible'
+  ) {
+    this.client = new OpenAI({ apiKey, baseURL });
     this.model = model;
+    this.name = name;
   }
 
   async generate(
@@ -45,8 +47,8 @@ export class DeepSeekProvider implements AiProvider {
       )
       .join('\n\n');
 
-    // DeepSeek's JSON mode requires the literal word "json" in the prompt and
-    // benefits from an explicit example of the expected shape.
+    // JSON mode requires the literal word "json" in the prompt and benefits
+    // from an explicit example of the expected shape.
     const system =
       `${req.systemPrompt}\n\n` +
       'Ground your answer ONLY in the reference material below and widely ' +
@@ -114,7 +116,7 @@ export class DeepSeekProvider implements AiProvider {
       // 429/5xx are retryable; other 4xx are not.
       const retryable = status === undefined || status === 429 || status >= 500;
       throw new AiProviderError(
-        `DeepSeek request failed: ${(err as Error).message}`,
+        `${this.name} request failed: ${(err as Error).message}`,
         retryable
       );
     }

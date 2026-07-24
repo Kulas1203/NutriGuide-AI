@@ -3,9 +3,9 @@ import {
   extractTextField,
   parseJsonObject,
   normalize,
-} from './deepseekProvider';
+} from './openAiCompatibleProvider';
 
-describe('DeepSeek streaming text extraction', () => {
+describe('OpenAI-compatible streaming text extraction', () => {
   it('returns null before the text field starts', () => {
     expect(extractTextField('{"expl')).toBeNull();
     expect(extractTextField('')).toBeNull();
@@ -32,7 +32,7 @@ describe('DeepSeek streaming text extraction', () => {
   });
 });
 
-describe('DeepSeek JSON object parsing', () => {
+describe('OpenAI-compatible JSON object parsing', () => {
   it('parses a clean object', () => {
     expect(parseJsonObject('{"a":1}')).toEqual({ a: 1 });
   });
@@ -46,7 +46,7 @@ describe('DeepSeek JSON object parsing', () => {
   });
 });
 
-describe('DeepSeek answer normalization', () => {
+describe('OpenAI-compatible answer normalization', () => {
   it('maps a well-formed answer to the CoachAnswer contract', () => {
     const answer = normalize({
       text: 'Eat more fiber.',
