@@ -14,6 +14,12 @@ import '../data/coach_service.dart';
 import '../domain/chat_message.dart';
 import '../domain/safety_classifier.dart';
 
+/// Thrown when the backend streams a `{"type":"error"}` event, so the answer
+/// flow falls into the graceful error path instead of rendering raw JSON.
+class CoachBackendException implements Exception {
+  const CoachBackendException();
+}
+
 class CoachState {
   const CoachState({
     this.messages = const [],
@@ -185,11 +191,17 @@ class CoachController extends Notifier<CoachState> {
         } else if (chunk.textDelta != null) {
           // Backend streams structured JSON lines; try to parse, else treat
           // as plain text delta (dev stub streams plain text).
-          final parsed = _tryParseStructured(chunk.textDelta!);
+          final line = chunk.textDelta!;
+          // A control event signaling backend failure: surface it via the
+          // graceful error path rather than rendering the raw JSON.
+          if (_isErrorEvent(line)) {
+            throw const CoachBackendException();
+          }
+          final parsed = _tryParseStructured(line);
           current = parsed != null
               ? _mergeStructured(current, parsed, safety)
               : current.copyWith(
-                  text: chunk.textDelta,
+                  text: line,
                   status: MessageStatus.streaming,
                 );
         }
@@ -241,6 +253,16 @@ class CoachController extends Notifier<CoachState> {
     professionalReferral: structured.professionalReferral,
     status: MessageStatus.streaming,
   );
+
+  /// True when a streamed line is the backend's `{"type":"error",...}` event.
+  bool _isErrorEvent(String line) {
+    try {
+      final json = jsonDecode(line);
+      return json is Map<String, dynamic> && json['type'] == 'error';
+    } on FormatException {
+      return false;
+    }
+  }
 
   ChatMessage? _tryParseStructured(String line) {
     try {
