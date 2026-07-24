@@ -152,7 +152,16 @@ class AnimatedCount extends StatelessWidget {
 
 /// Fade-through transition between bottom-navigation destinations
 /// (Material 3 top-level transition pattern).
-class FadeThroughSwitcher extends StatelessWidget {
+/// Fades (and subtly scales) [child] in whenever [switchKey] changes — used
+/// for tab transitions in the app shell.
+///
+/// Unlike an [AnimatedSwitcher], this keeps exactly ONE subtree mounted at a
+/// time. That matters when [child] is a GoRouter ShellRoute page: those pages
+/// carry a route-level GlobalKey (their PopScope), and holding the outgoing
+/// and incoming pages simultaneously would place that key in the tree twice,
+/// throwing "Duplicate GlobalKey". Fading the incoming page in over the same
+/// slot avoids the clash while keeping the motion.
+class FadeThroughSwitcher extends StatefulWidget {
   const FadeThroughSwitcher({
     super.key,
     required this.switchKey,
@@ -163,20 +172,45 @@ class FadeThroughSwitcher extends StatelessWidget {
   final Widget child;
 
   @override
+  State<FadeThroughSwitcher> createState() => _FadeThroughSwitcherState();
+}
+
+class _FadeThroughSwitcherState extends State<FadeThroughSwitcher>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: NGMotion.normal,
+    value: 1,
+  );
+  late final Animation<double> _fade = CurvedAnimation(
+    parent: _controller,
+    curve: Curves.easeOutCubic,
+  );
+
+  @override
+  void didUpdateWidget(FadeThroughSwitcher oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.switchKey != widget.switchKey &&
+        !MediaQuery.disableAnimationsOf(context)) {
+      _controller.forward(from: 0);
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (MediaQuery.disableAnimationsOf(context)) return child;
-    return AnimatedSwitcher(
-      duration: NGMotion.normal,
-      switchInCurve: const Interval(0.35, 1, curve: Curves.easeOutCubic),
-      switchOutCurve: const Interval(0.65, 1, curve: Curves.easeInCubic),
-      transitionBuilder: (child, animation) => FadeTransition(
-        opacity: animation,
-        child: ScaleTransition(
-          scale: Tween(begin: 0.985, end: 1.0).animate(animation),
-          child: child,
-        ),
+    if (MediaQuery.disableAnimationsOf(context)) return widget.child;
+    return FadeTransition(
+      opacity: _fade,
+      child: ScaleTransition(
+        scale: Tween(begin: 0.985, end: 1.0).animate(_fade),
+        child: widget.child,
       ),
-      child: KeyedSubtree(key: ValueKey(switchKey), child: child),
     );
   }
 }
