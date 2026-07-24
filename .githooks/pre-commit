@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# NutriGuide AI pre-commit hook.
+# Enable once with:  git config core.hooksPath .githooks
+set -euo pipefail
+
+staged() { git diff --cached --name-only --diff-filter=ACM; }
+
+# 1) Block secrets / signing / real env files.
+if staged | grep -E '(^|/)(key\.properties|.*\.(jks|keystore)|google-services\.json|serviceAccount.*\.json|\.env)$' | grep -v '\.env\.example$'; then
+  echo "✖ Refusing to commit signing/credential/env files."; exit 1
+fi
+if staged | xargs -r grep -lE "(AIza[0-9A-Za-z_\-]{35}|sk-ant-[A-Za-z0-9_\-]{20,}|BEGIN (RSA|EC|OPENSSH) PRIVATE KEY)" 2>/dev/null; then
+  echo "✖ Possible secret detected in staged changes."; exit 1
+fi
+
+# 2) Block production-credential modification without explicit override.
+if staged | grep -E '(^|/)\.firebaserc$' >/dev/null && [ "${ALLOW_FIREBASE_EDIT:-}" != "1" ]; then
+  echo "✖ .firebaserc change detected. Set ALLOW_FIREBASE_EDIT=1 to allow."; exit 1
+fi
+
+# 3) Format + analyze changed Dart files.
+DART_FILES=$(staged | grep '\.dart$' | grep '^app/' || true)
+if [ -n "$DART_FILES" ] && command -v flutter >/dev/null; then
+  (cd app && dart format $(echo "$DART_FILES" | sed 's#^app/##'))
+  echo "$DART_FILES" | sed 's#^app/##' | xargs -r git -C app add
+  (cd app && flutter analyze)
+fi
+
+# 4) Ensure generated seed data is current when the generator changes.
+if staged | grep -E 'tool/generate_seed_data.mjs' >/dev/null; then
+  node tool/generate_seed_data.mjs
+  git add app/assets/data/*.json
+fi
+
+echo "✓ pre-commit checks passed"

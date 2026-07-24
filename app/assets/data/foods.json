@@ -1,0 +1,1562 @@
+{
+ "version": "seed-v1",
+ "items": [
+  {
+   "id": "rice_white_cooked",
+   "name": "White rice, cooked",
+   "category": "grains",
+   "per100g": {
+    "kcal": 130,
+    "proteinG": 2.7,
+    "carbsG": 28.2,
+    "fatG": 0.3,
+    "fiberG": 0.4,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 158,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168878",
+   "allergens": [],
+   "tags": [
+    "balanced",
+    "general",
+    "vegetarian",
+    "vegan"
+   ]
+  },
+  {
+   "id": "rice_brown_cooked",
+   "name": "Brown rice, cooked",
+   "category": "grains",
+   "per100g": {
+    "kcal": 123,
+    "proteinG": 2.7,
+    "carbsG": 25.6,
+    "fatG": 1,
+    "fiberG": 1.6,
+    "sodiumMg": 4
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 195,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168875",
+   "allergens": [],
+   "tags": [
+    "balanced",
+    "high_fiber",
+    "whole_food",
+    "vegan"
+   ]
+  },
+  {
+   "id": "oats_dry",
+   "name": "Rolled oats, dry",
+   "category": "grains",
+   "per100g": {
+    "kcal": 389,
+    "proteinG": 16.9,
+    "carbsG": 66.3,
+    "fatG": 6.9,
+    "fiberG": 10.6,
+    "sodiumMg": 2
+   },
+   "servingName": "1/2 cup, dry",
+   "servingGrams": 40,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169705",
+   "allergens": [
+    "gluten"
+   ],
+   "tags": [
+    "high_fiber",
+    "whole_food",
+    "vegan",
+    "balanced"
+   ]
+  },
+  {
+   "id": "bread_whole_wheat",
+   "name": "Whole-wheat bread",
+   "category": "grains",
+   "per100g": {
+    "kcal": 252,
+    "proteinG": 12.3,
+    "carbsG": 42.7,
+    "fatG": 3.5,
+    "fiberG": 6.8,
+    "sodiumMg": 455
+   },
+   "servingName": "1 slice",
+   "servingGrams": 32,
+   "source": "verified",
+   "sourceRef": "USDA FDC 335240",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "tags": [
+    "high_fiber",
+    "balanced",
+    "vegan"
+   ]
+  },
+  {
+   "id": "potato_boiled",
+   "name": "Potato, boiled",
+   "category": "grains",
+   "per100g": {
+    "kcal": 87,
+    "proteinG": 1.9,
+    "carbsG": 20.1,
+    "fatG": 0.1,
+    "fiberG": 1.8,
+    "sodiumMg": 4
+   },
+   "servingName": "1 medium",
+   "servingGrams": 150,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170438",
+   "allergens": [],
+   "tags": [
+    "whole_food",
+    "vegan",
+    "balanced"
+   ]
+  },
+  {
+   "id": "sweet_potato_boiled",
+   "name": "Sweet potato, boiled",
+   "category": "grains",
+   "per100g": {
+    "kcal": 76,
+    "proteinG": 1.4,
+    "carbsG": 17.7,
+    "fatG": 0.1,
+    "fiberG": 2.5,
+    "sodiumMg": 27
+   },
+   "servingName": "1 medium",
+   "servingGrams": 150,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168483",
+   "allergens": [],
+   "tags": [
+    "whole_food",
+    "high_fiber",
+    "vegan"
+   ]
+  },
+  {
+   "id": "pasta_cooked",
+   "name": "Pasta, cooked",
+   "category": "grains",
+   "per100g": {
+    "kcal": 158,
+    "proteinG": 5.8,
+    "carbsG": 30.9,
+    "fatG": 0.9,
+    "fiberG": 1.8,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 140,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168927",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "tags": [
+    "balanced",
+    "vegan"
+   ]
+  },
+  {
+   "id": "chicken_breast_cooked",
+   "name": "Chicken breast, roasted, skinless",
+   "category": "protein",
+   "per100g": {
+    "kcal": 165,
+    "proteinG": 31,
+    "carbsG": 0,
+    "fatG": 3.6,
+    "fiberG": 0,
+    "sodiumMg": 74
+   },
+   "servingName": "100 g, cooked",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171477",
+   "allergens": [],
+   "tags": [
+    "high_protein",
+    "low_carb",
+    "keto",
+    "balanced"
+   ]
+  },
+  {
+   "id": "chicken_thigh_cooked",
+   "name": "Chicken thigh, roasted",
+   "category": "protein",
+   "per100g": {
+    "kcal": 209,
+    "proteinG": 26,
+    "carbsG": 0,
+    "fatG": 10.9,
+    "fiberG": 0,
+    "sodiumMg": 84
+   },
+   "servingName": "1 thigh",
+   "servingGrams": 90,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171482",
+   "allergens": [],
+   "tags": [
+    "high_protein",
+    "keto",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "beef_ground_cooked",
+   "name": "Ground beef 85% lean, pan-browned",
+   "category": "protein",
+   "per100g": {
+    "kcal": 246,
+    "proteinG": 24.6,
+    "carbsG": 0,
+    "fatG": 15.4,
+    "fiberG": 0,
+    "sodiumMg": 72
+   },
+   "servingName": "100 g, cooked",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 174036",
+   "allergens": [],
+   "tags": [
+    "high_protein",
+    "keto",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "pork_loin_cooked",
+   "name": "Pork loin, cooked",
+   "category": "protein",
+   "per100g": {
+    "kcal": 242,
+    "proteinG": 27.3,
+    "carbsG": 0,
+    "fatG": 14,
+    "fiberG": 0,
+    "sodiumMg": 53
+   },
+   "servingName": "100 g, cooked",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 167902",
+   "allergens": [],
+   "tags": [
+    "high_protein",
+    "keto",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "egg_boiled",
+   "name": "Egg, hard-boiled",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 155,
+    "proteinG": 12.6,
+    "carbsG": 1.1,
+    "fatG": 10.6,
+    "fiberG": 0,
+    "sodiumMg": 124
+   },
+   "servingName": "1 large egg",
+   "servingGrams": 50,
+   "source": "verified",
+   "sourceRef": "USDA FDC 173424",
+   "allergens": [
+    "egg"
+   ],
+   "tags": [
+    "high_protein",
+    "keto",
+    "low_carb",
+    "vegetarian"
+   ]
+  },
+  {
+   "id": "salmon_cooked",
+   "name": "Salmon, Atlantic, cooked",
+   "category": "protein",
+   "per100g": {
+    "kcal": 206,
+    "proteinG": 22.1,
+    "carbsG": 0,
+    "fatG": 12.4,
+    "fiberG": 0,
+    "sodiumMg": 61
+   },
+   "servingName": "1 fillet",
+   "servingGrams": 125,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175168",
+   "allergens": [
+    "fish"
+   ],
+   "tags": [
+    "pescatarian",
+    "mediterranean",
+    "keto",
+    "high_protein"
+   ]
+  },
+  {
+   "id": "tuna_canned_water",
+   "name": "Tuna, canned in water, drained",
+   "category": "protein",
+   "per100g": {
+    "kcal": 116,
+    "proteinG": 25.5,
+    "carbsG": 0,
+    "fatG": 0.8,
+    "fiberG": 0,
+    "sodiumMg": 320
+   },
+   "servingName": "1 can, drained",
+   "servingGrams": 120,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175159",
+   "allergens": [
+    "fish"
+   ],
+   "tags": [
+    "pescatarian",
+    "high_protein",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "milkfish_raw",
+   "name": "Milkfish (bangus), raw",
+   "category": "protein",
+   "per100g": {
+    "kcal": 148,
+    "proteinG": 20.5,
+    "carbsG": 0,
+    "fatG": 6.7,
+    "fiberG": 0,
+    "sodiumMg": 72
+   },
+   "servingName": "1 serving",
+   "servingGrams": 120,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171961",
+   "allergens": [
+    "fish"
+   ],
+   "tags": [
+    "pescatarian",
+    "high_protein"
+   ]
+  },
+  {
+   "id": "tilapia_cooked",
+   "name": "Tilapia, cooked",
+   "category": "protein",
+   "per100g": {
+    "kcal": 128,
+    "proteinG": 26.2,
+    "carbsG": 0,
+    "fatG": 2.7,
+    "fiberG": 0,
+    "sodiumMg": 56
+   },
+   "servingName": "1 fillet",
+   "servingGrams": 110,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175177",
+   "allergens": [
+    "fish"
+   ],
+   "tags": [
+    "pescatarian",
+    "high_protein",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "shrimp_cooked",
+   "name": "Shrimp, cooked",
+   "category": "protein",
+   "per100g": {
+    "kcal": 99,
+    "proteinG": 24,
+    "carbsG": 0.2,
+    "fatG": 0.3,
+    "fiberG": 0,
+    "sodiumMg": 111
+   },
+   "servingName": "100 g, cooked",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175180",
+   "allergens": [
+    "shellfish"
+   ],
+   "tags": [
+    "pescatarian",
+    "high_protein",
+    "keto"
+   ]
+  },
+  {
+   "id": "tofu_firm",
+   "name": "Tofu, firm",
+   "category": "protein",
+   "per100g": {
+    "kcal": 144,
+    "proteinG": 17.3,
+    "carbsG": 2.8,
+    "fatG": 8.7,
+    "fiberG": 2.3,
+    "sodiumMg": 14
+   },
+   "servingName": "1/2 block",
+   "servingGrams": 120,
+   "source": "verified",
+   "sourceRef": "USDA FDC 172476",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_protein",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "milk_whole",
+   "name": "Milk, whole",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 61,
+    "proteinG": 3.2,
+    "carbsG": 4.8,
+    "fatG": 3.3,
+    "fiberG": 0,
+    "sodiumMg": 43
+   },
+   "servingName": "1 cup",
+   "servingGrams": 244,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171265",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "vegetarian",
+    "balanced"
+   ]
+  },
+  {
+   "id": "yogurt_plain",
+   "name": "Yogurt, plain, whole milk",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 61,
+    "proteinG": 3.5,
+    "carbsG": 4.7,
+    "fatG": 3.3,
+    "fiberG": 0,
+    "sodiumMg": 46
+   },
+   "servingName": "1 cup",
+   "servingGrams": 245,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171284",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "vegetarian",
+    "balanced",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "greek_yogurt_nonfat",
+   "name": "Greek yogurt, plain, nonfat",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 59,
+    "proteinG": 10.2,
+    "carbsG": 3.6,
+    "fatG": 0.4,
+    "fiberG": 0,
+    "sodiumMg": 36
+   },
+   "servingName": "1 cup",
+   "servingGrams": 245,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170903",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "high_protein",
+    "vegetarian",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "cheddar",
+   "name": "Cheddar cheese",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 403,
+    "proteinG": 24.9,
+    "carbsG": 1.3,
+    "fatG": 33.1,
+    "fiberG": 0,
+    "sodiumMg": 621
+   },
+   "servingName": "1 slice",
+   "servingGrams": 28,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168826",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "keto",
+    "low_carb",
+    "vegetarian"
+   ]
+  },
+  {
+   "id": "cottage_cheese",
+   "name": "Cottage cheese, 2%",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 84,
+    "proteinG": 11,
+    "carbsG": 4.3,
+    "fatG": 2.3,
+    "fiberG": 0,
+    "sodiumMg": 321
+   },
+   "servingName": "1/2 cup",
+   "servingGrams": 113,
+   "source": "verified",
+   "sourceRef": "USDA FDC 173417",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "high_protein",
+    "vegetarian",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "broccoli_cooked",
+   "name": "Broccoli, cooked",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 35,
+    "proteinG": 2.4,
+    "carbsG": 7.2,
+    "fatG": 0.4,
+    "fiberG": 3.3,
+    "sodiumMg": 41
+   },
+   "servingName": "1 cup, chopped",
+   "servingGrams": 156,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169967",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto",
+    "low_carb",
+    "high_fiber",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "spinach_raw",
+   "name": "Spinach, raw",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 23,
+    "proteinG": 2.9,
+    "carbsG": 3.6,
+    "fatG": 0.4,
+    "fiberG": 2.2,
+    "sodiumMg": 79
+   },
+   "servingName": "2 cups, raw",
+   "servingGrams": 60,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168462",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto",
+    "low_carb",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "carrot_raw",
+   "name": "Carrot, raw",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 41,
+    "proteinG": 0.9,
+    "carbsG": 9.6,
+    "fatG": 0.2,
+    "fiberG": 2.8,
+    "sodiumMg": 69
+   },
+   "servingName": "1 medium",
+   "servingGrams": 61,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170393",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "tomato_raw",
+   "name": "Tomato, raw",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 18,
+    "proteinG": 0.9,
+    "carbsG": 3.9,
+    "fatG": 0.2,
+    "fiberG": 1.2,
+    "sodiumMg": 5
+   },
+   "servingName": "1 medium",
+   "servingGrams": 123,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170457",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto",
+    "mediterranean",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "cabbage_raw",
+   "name": "Cabbage, raw",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 25,
+    "proteinG": 1.3,
+    "carbsG": 5.8,
+    "fatG": 0.1,
+    "fiberG": 2.5,
+    "sodiumMg": 18
+   },
+   "servingName": "1 cup, shredded",
+   "servingGrams": 89,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169975",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "low_carb",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "kangkong_raw",
+   "name": "Water spinach (kangkong), raw",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 19,
+    "proteinG": 2.6,
+    "carbsG": 3.1,
+    "fatG": 0.2,
+    "fiberG": 2.1,
+    "sodiumMg": 113
+   },
+   "servingName": "1 bunch",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168571",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "low_carb",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "eggplant_cooked",
+   "name": "Eggplant, cooked",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 35,
+    "proteinG": 0.8,
+    "carbsG": 8.7,
+    "fatG": 0.2,
+    "fiberG": 2.5,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup",
+   "servingGrams": 99,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169229",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "low_carb",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "squash_butternut",
+   "name": "Squash (kalabasa), baked",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 40,
+    "proteinG": 0.9,
+    "carbsG": 10.5,
+    "fatG": 0.1,
+    "fiberG": 3.2,
+    "sodiumMg": 4
+   },
+   "servingName": "1 cup, cubed",
+   "servingGrams": 205,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169296",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "green_beans_cooked",
+   "name": "Green beans (sitaw), cooked",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 35,
+    "proteinG": 1.9,
+    "carbsG": 7.9,
+    "fatG": 0.3,
+    "fiberG": 3.2,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup",
+   "servingGrams": 125,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169961",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "banana",
+   "name": "Banana",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 89,
+    "proteinG": 1.1,
+    "carbsG": 22.8,
+    "fatG": 0.3,
+    "fiberG": 2.6,
+    "sodiumMg": 1
+   },
+   "servingName": "1 medium",
+   "servingGrams": 118,
+   "source": "verified",
+   "sourceRef": "USDA FDC 173944",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food",
+    "balanced"
+   ]
+  },
+  {
+   "id": "apple",
+   "name": "Apple, with skin",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 52,
+    "proteinG": 0.3,
+    "carbsG": 13.8,
+    "fatG": 0.2,
+    "fiberG": 2.4,
+    "sodiumMg": 1
+   },
+   "servingName": "1 medium",
+   "servingGrams": 182,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171688",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "orange",
+   "name": "Orange",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 47,
+    "proteinG": 0.9,
+    "carbsG": 11.8,
+    "fatG": 0.1,
+    "fiberG": 2.4,
+    "sodiumMg": 0
+   },
+   "servingName": "1 medium",
+   "servingGrams": 131,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169097",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "mango",
+   "name": "Mango",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 60,
+    "proteinG": 0.8,
+    "carbsG": 15,
+    "fatG": 0.4,
+    "fiberG": 1.6,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup, sliced",
+   "servingGrams": 165,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169910",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "papaya",
+   "name": "Papaya",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 43,
+    "proteinG": 0.5,
+    "carbsG": 10.8,
+    "fatG": 0.3,
+    "fiberG": 1.7,
+    "sodiumMg": 8
+   },
+   "servingName": "1 cup, cubed",
+   "servingGrams": 145,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169926",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "pineapple",
+   "name": "Pineapple",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 50,
+    "proteinG": 0.5,
+    "carbsG": 13.1,
+    "fatG": 0.1,
+    "fiberG": 1.4,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup, chunks",
+   "servingGrams": 165,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169124",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "mung_beans_cooked",
+   "name": "Mung beans (monggo), cooked",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 105,
+    "proteinG": 7,
+    "carbsG": 19.2,
+    "fatG": 0.4,
+    "fiberG": 7.6,
+    "sodiumMg": 2
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 202,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175265",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber",
+    "whole_food",
+    "high_protein"
+   ]
+  },
+  {
+   "id": "chickpeas_cooked",
+   "name": "Chickpeas, cooked",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 164,
+    "proteinG": 8.9,
+    "carbsG": 27.4,
+    "fatG": 2.6,
+    "fiberG": 7.6,
+    "sodiumMg": 7
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 164,
+   "source": "verified",
+   "sourceRef": "USDA FDC 173757",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "lentils_cooked",
+   "name": "Lentils, cooked",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 116,
+    "proteinG": 9,
+    "carbsG": 20.1,
+    "fatG": 0.4,
+    "fiberG": 7.9,
+    "sodiumMg": 2
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 198,
+   "source": "verified",
+   "sourceRef": "USDA FDC 172421",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber",
+    "mediterranean",
+    "high_protein"
+   ]
+  },
+  {
+   "id": "kidney_beans_cooked",
+   "name": "Kidney beans, cooked",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 127,
+    "proteinG": 8.7,
+    "carbsG": 22.8,
+    "fatG": 0.5,
+    "fiberG": 6.4,
+    "sodiumMg": 1
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 177,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175194",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "peanut_butter",
+   "name": "Peanut butter, smooth",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 588,
+    "proteinG": 25.1,
+    "carbsG": 19.6,
+    "fatG": 50.4,
+    "fiberG": 6,
+    "sodiumMg": 426
+   },
+   "servingName": "2 tbsp",
+   "servingGrams": 32,
+   "source": "verified",
+   "sourceRef": "USDA FDC 172470",
+   "allergens": [
+    "peanut"
+   ],
+   "tags": [
+    "vegan",
+    "keto",
+    "high_protein"
+   ]
+  },
+  {
+   "id": "almonds",
+   "name": "Almonds, raw",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 579,
+    "proteinG": 21.2,
+    "carbsG": 21.6,
+    "fatG": 49.9,
+    "fiberG": 12.5,
+    "sodiumMg": 1
+   },
+   "servingName": "1 small handful",
+   "servingGrams": 28,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170567",
+   "allergens": [
+    "tree nut"
+   ],
+   "tags": [
+    "vegan",
+    "keto",
+    "mediterranean",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "olive_oil",
+   "name": "Olive oil",
+   "category": "fats",
+   "per100g": {
+    "kcal": 884,
+    "proteinG": 0,
+    "carbsG": 0,
+    "fatG": 100,
+    "fiberG": 0,
+    "sodiumMg": 2
+   },
+   "servingName": "1 tbsp",
+   "servingGrams": 14,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171413",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "butter",
+   "name": "Butter",
+   "category": "fats",
+   "per100g": {
+    "kcal": 717,
+    "proteinG": 0.9,
+    "carbsG": 0.1,
+    "fatG": 81.1,
+    "fiberG": 0,
+    "sodiumMg": 643
+   },
+   "servingName": "1 tbsp",
+   "servingGrams": 14,
+   "source": "verified",
+   "sourceRef": "USDA FDC 173430",
+   "allergens": [
+    "milk"
+   ],
+   "tags": [
+    "keto",
+    "vegetarian"
+   ]
+  },
+  {
+   "id": "avocado",
+   "name": "Avocado",
+   "category": "fats",
+   "per100g": {
+    "kcal": 160,
+    "proteinG": 2,
+    "carbsG": 8.5,
+    "fatG": 14.7,
+    "fiberG": 6.7,
+    "sodiumMg": 7
+   },
+   "servingName": "1/2 fruit",
+   "servingGrams": 100,
+   "source": "verified",
+   "sourceRef": "USDA FDC 171705",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto",
+    "mediterranean",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "coconut_milk_canned",
+   "name": "Coconut milk, canned",
+   "category": "fats",
+   "per100g": {
+    "kcal": 197,
+    "proteinG": 2,
+    "carbsG": 2.8,
+    "fatG": 21.3,
+    "fiberG": 0,
+    "sodiumMg": 13
+   },
+   "servingName": "1/4 cup",
+   "servingGrams": 60,
+   "source": "verified",
+   "sourceRef": "USDA FDC 170173",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "keto"
+   ]
+  },
+  {
+   "id": "soy_milk_unsweetened",
+   "name": "Soy milk, unsweetened",
+   "category": "beverages",
+   "per100g": {
+    "kcal": 33,
+    "proteinG": 2.9,
+    "carbsG": 1.2,
+    "fatG": 1.8,
+    "fiberG": 0.4,
+    "sodiumMg": 38
+   },
+   "servingName": "1 cup",
+   "servingGrams": 243,
+   "source": "verified",
+   "sourceRef": "USDA FDC 175215",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "vegan",
+    "low_carb"
+   ]
+  },
+  {
+   "id": "quinoa_cooked",
+   "name": "Quinoa, cooked",
+   "category": "grains",
+   "per100g": {
+    "kcal": 120,
+    "proteinG": 4.4,
+    "carbsG": 21.3,
+    "fatG": 1.9,
+    "fiberG": 2.8,
+    "sodiumMg": 7
+   },
+   "servingName": "1 cup, cooked",
+   "servingGrams": 185,
+   "source": "verified",
+   "sourceRef": "USDA FDC 168917",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "high_fiber",
+    "whole_food",
+    "mediterranean"
+   ]
+  },
+  {
+   "id": "corn_boiled",
+   "name": "Corn, sweet, boiled",
+   "category": "vegetables",
+   "per100g": {
+    "kcal": 96,
+    "proteinG": 3.4,
+    "carbsG": 21,
+    "fatG": 1.5,
+    "fiberG": 2.4,
+    "sodiumMg": 1
+   },
+   "servingName": "1 ear",
+   "servingGrams": 103,
+   "source": "verified",
+   "sourceRef": "USDA FDC 169998",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "whole_food"
+   ]
+  },
+  {
+   "id": "hummus",
+   "name": "Hummus",
+   "category": "legumes",
+   "per100g": {
+    "kcal": 166,
+    "proteinG": 7.9,
+    "carbsG": 14.3,
+    "fatG": 9.6,
+    "fiberG": 6,
+    "sodiumMg": 379
+   },
+   "servingName": "1/4 cup",
+   "servingGrams": 60,
+   "source": "verified",
+   "sourceRef": "USDA FDC 174289",
+   "allergens": [
+    "sesame"
+   ],
+   "tags": [
+    "vegan",
+    "mediterranean",
+    "high_fiber"
+   ]
+  },
+  {
+   "id": "chicken_adobo",
+   "name": "Chicken adobo",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 177,
+    "proteinG": 16,
+    "carbsG": 3.5,
+    "fatG": 11,
+    "fiberG": 0.3,
+    "sodiumMg": 480
+   },
+   "servingName": "1 cup with sauce",
+   "servingGrams": 225,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Chicken thigh braised in soy sauce, vinegar, garlic and oil; ~1 tbsp sauce included per serving. Home recipe proportions: 1 kg chicken, 1/2 cup soy sauce, 1/2 cup vinegar, 2 tbsp oil for 6 servings.",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "general",
+    "balanced",
+    "high_protein",
+    "filipino"
+   ]
+  },
+  {
+   "id": "pork_sinigang",
+   "name": "Pork sinigang (sour soup)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 66.1,
+    "proteinG": 5.5,
+    "carbsG": 4.5,
+    "fatG": 2.9,
+    "fiberG": 1.2,
+    "sodiumMg": 420
+   },
+   "servingName": "1 bowl with broth",
+   "servingGrams": 350,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Pork belly and shoulder mix simmered with tamarind broth, kangkong, radish, tomato and string beans. Broth included; ~120 g pork per liter of soup.",
+   "allergens": [],
+   "tags": [
+    "general",
+    "balanced",
+    "whole_food",
+    "low_carb",
+    "filipino"
+   ]
+  },
+  {
+   "id": "chicken_tinola",
+   "name": "Chicken tinola",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 55.6,
+    "proteinG": 6,
+    "carbsG": 2.5,
+    "fatG": 2.4,
+    "fiberG": 0.6,
+    "sodiumMg": 350
+   },
+   "servingName": "1 bowl with broth",
+   "servingGrams": 350,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Chicken pieces simmered with ginger broth, green papaya/sayote and malunggay leaves. Bone-out edible portion estimated at 90 g per bowl.",
+   "allergens": [],
+   "tags": [
+    "general",
+    "balanced",
+    "whole_food",
+    "low_carb",
+    "filipino"
+   ]
+  },
+  {
+   "id": "pinakbet_veg",
+   "name": "Pinakbet (vegetable version)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 62.3,
+    "proteinG": 2.5,
+    "carbsG": 7,
+    "fatG": 2.7,
+    "fiberG": 2.6,
+    "sodiumMg": 390
+   },
+   "servingName": "1 cup",
+   "servingGrams": 160,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Kalabasa, sitaw, talong, ampalaya and okra sautéed with tomato and a small amount of miso in place of bagoong. Traditional versions with bagoong or pork have more sodium and fat.",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_fiber",
+    "whole_food",
+    "filipino"
+   ]
+  },
+  {
+   "id": "pancit_bihon",
+   "name": "Pancit bihon with chicken and vegetables",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 131.1,
+    "proteinG": 6,
+    "carbsG": 18,
+    "fatG": 3.9,
+    "fiberG": 1.4,
+    "sodiumMg": 410
+   },
+   "servingName": "1 cup",
+   "servingGrams": 160,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Rice noodles stir-fried with shredded chicken breast, cabbage, carrots and soy sauce; 1 tbsp oil per 4 servings.",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "general",
+    "balanced",
+    "filipino"
+   ]
+  },
+  {
+   "id": "arroz_caldo",
+   "name": "Arroz caldo (chicken rice porridge)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 95.6,
+    "proteinG": 5,
+    "carbsG": 13.5,
+    "fatG": 2.4,
+    "fiberG": 0.3,
+    "sodiumMg": 380
+   },
+   "servingName": "1 bowl",
+   "servingGrams": 300,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Rice porridge with chicken, ginger, garlic and fish sauce, topped with a sliver of egg. ~60 g chicken and 50 g raw rice per bowl.",
+   "allergens": [
+    "egg"
+   ],
+   "tags": [
+    "general",
+    "balanced",
+    "filipino"
+   ]
+  },
+  {
+   "id": "tortang_talong",
+   "name": "Tortang talong (eggplant omelet)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 96.7,
+    "proteinG": 5.5,
+    "carbsG": 4.5,
+    "fatG": 6.3,
+    "fiberG": 1.8,
+    "sodiumMg": 260
+   },
+   "servingName": "1 piece",
+   "servingGrams": 170,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Grilled eggplant flattened into beaten egg and pan-fried in ~1 tsp oil per piece.",
+   "allergens": [
+    "egg"
+   ],
+   "tags": [
+    "vegetarian",
+    "low_carb",
+    "general",
+    "filipino"
+   ]
+  },
+  {
+   "id": "ginisang_monggo",
+   "name": "Ginisang monggo (mung bean stew)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 93.4,
+    "proteinG": 6.5,
+    "carbsG": 11,
+    "fatG": 2.6,
+    "fiberG": 3.4,
+    "sodiumMg": 330
+   },
+   "servingName": "1 cup",
+   "servingGrams": 240,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Mung beans simmered and sautéed with garlic, onion, tomato and malunggay; plant version without pork or shrimp. 1 tbsp oil per 4 servings.",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "vegetarian",
+    "high_fiber",
+    "whole_food",
+    "general",
+    "filipino"
+   ]
+  },
+  {
+   "id": "sinangag",
+   "name": "Sinangag (garlic fried rice)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 178.6,
+    "proteinG": 3.5,
+    "carbsG": 29,
+    "fatG": 5.4,
+    "fiberG": 0.5,
+    "sodiumMg": 300
+   },
+   "servingName": "1 cup",
+   "servingGrams": 160,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Day-old rice fried with garlic and ~1 tsp oil per cup, lightly salted.",
+   "allergens": [],
+   "tags": [
+    "vegan",
+    "general",
+    "filipino"
+   ]
+  },
+  {
+   "id": "lumpiang_shanghai",
+   "name": "Lumpiang shanghai (fried spring rolls)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 241.6,
+    "proteinG": 10,
+    "carbsG": 18,
+    "fatG": 14.4,
+    "fiberG": 1,
+    "sodiumMg": 420
+   },
+   "servingName": "3 pieces",
+   "servingGrams": 90,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Ground pork and vegetable filling in wheat wrappers, deep-fried. Oil absorption estimated at 10% of weight.",
+   "allergens": [
+    "wheat",
+    "gluten"
+   ],
+   "tags": [
+    "general",
+    "filipino"
+   ]
+  },
+  {
+   "id": "beef_tapa",
+   "name": "Beef tapa",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 201.2,
+    "proteinG": 22,
+    "carbsG": 4,
+    "fatG": 10.8,
+    "fiberG": 0,
+    "sodiumMg": 620
+   },
+   "servingName": "1 serving",
+   "servingGrams": 100,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Thin-sliced beef cured with soy sauce, garlic and sugar, pan-fried. Cure absorbs ~1 tsp soy sauce per serving.",
+   "allergens": [
+    "soy"
+   ],
+   "tags": [
+    "high_protein",
+    "low_carb",
+    "general",
+    "filipino"
+   ]
+  },
+  {
+   "id": "lechon_kawali",
+   "name": "Lechon kawali (crispy pork belly)",
+   "category": "dishes",
+   "per100g": {
+    "kcal": 420.7,
+    "proteinG": 18,
+    "carbsG": 1,
+    "fatG": 38.3,
+    "fiberG": 0,
+    "sodiumMg": 480
+   },
+   "servingName": "1 serving",
+   "servingGrams": 100,
+   "source": "recipeEstimate",
+   "sourceRef": "NutriGuide curated dataset v1",
+   "assumptions": "Pork belly boiled then deep-fried; skin included. Values reflect the high fat of the cut.",
+   "allergens": [],
+   "tags": [
+    "keto",
+    "low_carb",
+    "general",
+    "filipino"
+   ]
+  }
+ ]
+}

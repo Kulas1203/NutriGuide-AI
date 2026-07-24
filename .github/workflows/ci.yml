@@ -1,0 +1,93 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: ['**']
+
+jobs:
+  secret-scan:
+    name: Secret & config guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail on committed secrets or real env files
+        run: |
+          set -e
+          # No committed keystores, service accounts, or real env files.
+          if git ls-files | grep -E '(^|/)(key\.properties|.*\.jks|.*\.keystore|google-services\.json|serviceAccount.*\.json)$'; then
+            echo "::error::Signing/credential file committed."; exit 1
+          fi
+          if git ls-files | grep -E '(^|/)\.env$'; then
+            echo "::error::.env committed (only .env.example allowed)."; exit 1
+          fi
+          # Heuristic scan for obvious secret patterns in tracked files.
+          if git grep -nE "(AIza[0-9A-Za-z_\-]{35}|sk-ant-[A-Za-z0-9_\-]{20,}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----)" -- . ':!**/*.md'; then
+            echo "::error::Possible secret detected."; exit 1
+          fi
+          echo "No secrets detected."
+
+  flutter:
+    name: Flutter analyze, test, build AAB
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Verify generated seed data is up to date
+        run: |
+          node ../tool/generate_seed_data.mjs
+          git diff --exit-code assets/data || \
+            (echo "::error::Seed data out of date; run tool/generate_seed_data.mjs" && exit 1)
+      - name: Analyze (zero issues required)
+        run: flutter analyze
+      - name: Test
+        run: flutter test
+      - name: Build App Bundle (target SDK 36)
+        # Dev-flavored build for CI verification. Production AABs are built by a
+        # separate release job that injects the upload keystore from secrets.
+        run: flutter build appbundle --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-aab
+          path: app/build/app/outputs/bundle/**/*.aab
+          if-no-files-found: warn
+      - name: Build installable APK (sideload testing)
+        # Directly installable on a device — download from the run's Artifacts.
+        run: flutter build apk --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: app-debug-apk
+          path: app/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: warn
+
+  backend:
+    name: Backend build & test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend/functions
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci || npm install
+      - name: Type-check & build
+        run: npm run build
+      - name: Unit tests (safety, plan validation)
+        run: npm test
+      - name: AI safety evaluation gate
+        working-directory: .
+        run: node ai_evals/run_safety_evals.mjs

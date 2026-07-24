@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "nutriguide-prod",
+    "dev": "nutriguide-dev",
+    "prod": "nutriguide-prod"
+  }
+}
