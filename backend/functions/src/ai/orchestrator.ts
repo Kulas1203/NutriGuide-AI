@@ -100,10 +100,12 @@ export class Orchestrator {
     onDelta: (partialText: string) => void
   ): Promise<CoachAnswer> {
     const attempts = 2;
+    let lastError: unknown;
     for (let i = 0; i < attempts; i++) {
       try {
         return await this.primary.generate(req, onDelta);
       } catch (err) {
+        lastError = err;
         const retryable = err instanceof AiProviderError && err.retryable;
         if (!retryable || i === attempts - 1) break;
         await delay(250 * Math.pow(2, i));
@@ -111,9 +113,17 @@ export class Orchestrator {
     }
     // Provider fallback (no secret exposure — both live server-side).
     if (this.fallback) {
-      return this.fallback.generate(req, onDelta);
+      try {
+        return await this.fallback.generate(req, onDelta);
+      } catch (err) {
+        lastError = err;
+      }
     }
-    throw new AiProviderError('All providers failed', false);
+    // Preserve the underlying provider error so logs show the real cause
+    // (e.g. auth failure vs insufficient balance) instead of a generic message.
+    const detail =
+      lastError instanceof Error ? lastError.message : String(lastError);
+    throw new AiProviderError(`All providers failed: ${detail}`, false);
   }
 
   static safetyVersion(): string {
